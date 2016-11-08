@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        warTieButtonPress.enabled = game.isWar
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -30,8 +31,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var P2CardImage: UIImageView!
     @IBAction func warButton(sender: UIButton){
         game.battle()
+        warButtonPress.enabled = !game.isWar
+        warTieButtonPress.enabled = game.isWar
         updateLabels()
     }
+    @IBOutlet weak var warButtonPress: UIButton!
+    @IBAction func warTieButton(sender: UIButton) {
+        game.war(game.p1CardDraw, p2CardDraw: game.p2CardDraw)
+        warTieButtonPress.enabled = game.isWar
+        warButtonPress.enabled = !game.isWar
+        updateLabels()
+    }
+    @IBOutlet weak var warTieButtonPress: UIButton!
+    
+
+    
     
     func loadImageFromUrl(url: String, view: UIImageView){
         let url = NSURL(string: url)!

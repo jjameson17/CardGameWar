@@ -15,6 +15,10 @@ class Game {
     var p2Cards = [JSONDictionary]()
     var p1CardImage: String = ""
     var p2CardImage: String = ""
+    var warStack: [JSONDictionary] = []
+    var isWar: Bool = false
+    var p1CardDraw: Int = 0
+    var p2CardDraw: Int = 0
     var deckID: String?
     
     
@@ -25,9 +29,7 @@ class Game {
         print(self.deckID)
         if let input = self.deckID {
             let p1Deal = api.deal(input)
-            //print(p1Deal!["cards"]![0])
             self.p1Cards = p1Deal!["cards"] as! [JSONDictionary] //deal cards for player 1
-            //print(self.p1Cards[0])
             let p2Deal = api.deal(input)
             self.p2Cards = p2Deal!["cards"] as! [JSONDictionary] //deal cards for player 2
         }
@@ -36,27 +38,29 @@ class Game {
     
     
     func battle() {
-        let p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
-        let p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
-        let p1CardVal = convertCardValue(self.p1Cards[p1CardDraw]["value"]! as! String) // change to Int
-        let p2CardVal = convertCardValue(self.p2Cards[p2CardDraw]["value"]! as! String) //change to Int
-        self.p1CardImage = self.p1Cards[p1CardDraw]["image"]! as! String
-        self.p2CardImage = self.p2Cards[p2CardDraw]["image"]! as! String
-        print(p1CardImage)
-        print(p2CardImage)
+        //let p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
+        //let p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
+        self.p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
+        self.p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
+        let p1CardVal = convertCardValue(self.p1Cards[self.p1CardDraw]["value"]! as! String) // change to Int
+        let p2CardVal = convertCardValue(self.p2Cards[self.p2CardDraw]["value"]! as! String) //change to Int
+        self.p1CardImage = self.p1Cards[self.p1CardDraw]["image"]! as! String
+        self.p2CardImage = self.p2Cards[self.p2CardDraw]["image"]! as! String
         if p1CardVal > p2CardVal {
-            self.p1Cards.append(self.p2Cards[p2CardDraw])
-            self.p2Cards.removeAtIndex(p2CardDraw)
-            print(p1Cards.count)
-            print(p2Cards.count)
+            self.p1Cards.append(self.p2Cards[self.p2CardDraw])
+            self.p2Cards.removeAtIndex(self.p2CardDraw)
+            self.p1Cards.appendContentsOf(self.warStack)
+            self.warStack.removeAll()
+            self.isWar = false
         } else if p1CardVal < p2CardVal {
-            self.p2Cards.append(self.p2Cards[p2CardDraw])
-            self.p1Cards.removeAtIndex(p1CardDraw)
-            print(p1Cards.count)
-            print(p2Cards.count)
+            self.p2Cards.append(self.p2Cards[self.p2CardDraw])
+            self.p1Cards.removeAtIndex(self.p1CardDraw)
+            self.p2Cards.appendContentsOf(self.warStack)
+            self.warStack.removeAll()
+            self.isWar = false
         } else {
-            print("none")
-            
+            self.isWar = true
+            //war(p1CardDraw, p2CardDraw: p2CardDraw)
         }
     }
     
@@ -75,7 +79,12 @@ class Game {
     }
     
     
-    func war() {
+    func war(p1CardDraw: Int, p2CardDraw: Int) {
+        self.warStack.append(self.p1Cards[self.p1CardDraw])
+        self.warStack.append(self.p2Cards[self.p2CardDraw])
+        self.p1Cards.removeAtIndex(self.p1CardDraw)
+        self.p2Cards.removeAtIndex(self.p2CardDraw)
+        battle()
         //possible option: draw index - 1, use parameters for previous index, make sure index isn't 0
         //>> add to a card stack, append number of cards in stack to total cards
         //>> possibly make separate battle function with random numbers as inputs
