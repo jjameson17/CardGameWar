@@ -14,6 +14,8 @@
 		359F1D9A1DD10F6400C5D096 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359F1D981DD10F6400C5D096 /* LaunchScreen.storyboard */; };
 		359F1DA51DD10F6400C5D096 /* CardGameWar1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1DA41DD10F6400C5D096 /* CardGameWar1Tests.swift */; };
 		359F1DB01DD10F6400C5D096 /* CardGameWar1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1DAF1DD10F6400C5D096 /* CardGameWar1UITests.swift */; };
+		359F1DBE1DD10FB200C5D096 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1DBD1DD10FB200C5D096 /* Game.swift */; };
+		35FF87521DD11C990011C913 /* APIparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF87511DD11C990011C913 /* APIparser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		359F1DAB1DD10F6400C5D096 /* CardGameWar1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardGameWar1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		359F1DAF1DD10F6400C5D096 /* CardGameWar1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameWar1UITests.swift; sourceTree = "<group>"; };
 		359F1DB11DD10F6400C5D096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		359F1DBD1DD10FB200C5D096 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		35FF87511DD11C990011C913 /* APIparser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIparser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				359F1D961DD10F6400C5D096 /* Assets.xcassets */,
 				359F1D981DD10F6400C5D096 /* LaunchScreen.storyboard */,
 				359F1D9B1DD10F6400C5D096 /* Info.plist */,
+				359F1DBD1DD10FB200C5D096 /* Game.swift */,
+				35FF87511DD11C990011C913 /* APIparser.swift */,
 			);
 			path = CardGameWar1;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				359F1D921DD10F6400C5D096 /* ViewController.swift in Sources */,
+				35FF87521DD11C990011C913 /* APIparser.swift in Sources */,
+				359F1DBE1DD10FB200C5D096 /* Game.swift in Sources */,
 				359F1D901DD10F6400C5D096 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +422,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jameson.CardGameWar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -426,7 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jameson.CardGameWar1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -503,6 +511,7 @@
 				359F1DB61DD10F6400C5D096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		359F1DB71DD10F6400C5D096 /* Build configuration list for PBXNativeTarget "CardGameWar1Tests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +520,7 @@
 				359F1DB91DD10F6400C5D096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		359F1DBA1DD10F6400C5D096 /* Build configuration list for PBXNativeTarget "CardGameWar1UITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +529,7 @@
 				359F1DBC1DD10F6400C5D096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
