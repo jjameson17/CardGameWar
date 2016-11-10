@@ -65,6 +65,21 @@ class ViewController: UIViewController {
         P2CardTotal.text = String(game.p2Cards.count)
         loadImageFromUrl(game.p1CardImage, view: P1CardImage)
         loadImageFromUrl(game.p2CardImage, view: P2CardImage)
+        gameOver()
+    }
+    
+    func gameOver() {
+        if game.p1Win == true {
+            //let game = Game()
+            P1CardTotal.text = "Player 1 Wins"
+            warButtonPress.enabled = false
+            warTieButtonPress.enabled = false
+        }
+        if game.p2Win == true {
+            P2CardTotal.text = "Player 2 Wins"
+            warButtonPress.enabled = false
+            warTieButtonPress.enabled = false
+        }
     }
     
 

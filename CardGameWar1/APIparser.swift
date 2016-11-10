@@ -41,6 +41,7 @@ class APIParser {
     }
     
     func deal(deckID: String?) -> JSONDictionary? {
+        print(deckID)
         let url = NSURL(string: "https://deckofcardsapi.com/api/deck/\(deckID!)/draw/?count=26")
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "GET"

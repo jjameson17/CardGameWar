@@ -19,6 +19,8 @@ class Game {
     var isWar: Bool = false
     var p1CardDraw: Int = 0
     var p2CardDraw: Int = 0
+    var p1Win: Bool = false
+    var p2Win: Bool = false
     var deckID: String?
     
     
@@ -38,6 +40,7 @@ class Game {
     
     
     func battle() {
+        didLose()
         //let p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
         //let p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
         self.p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
@@ -49,12 +52,14 @@ class Game {
         if p1CardVal > p2CardVal {
             self.p1Cards.append(self.p2Cards[self.p2CardDraw])
             self.p2Cards.removeAtIndex(self.p2CardDraw)
+            didLose()
             self.p1Cards.appendContentsOf(self.warStack)
             self.warStack.removeAll()
             self.isWar = false
         } else if p1CardVal < p2CardVal {
-            self.p2Cards.append(self.p2Cards[self.p2CardDraw])
+            self.p2Cards.append(self.p1Cards[self.p1CardDraw])
             self.p1Cards.removeAtIndex(self.p1CardDraw)
+            didLose()
             self.p2Cards.appendContentsOf(self.warStack)
             self.warStack.removeAll()
             self.isWar = false
@@ -80,16 +85,23 @@ class Game {
     
     
     func war(p1CardDraw: Int, p2CardDraw: Int) {
+        didLose()
         self.warStack.append(self.p1Cards[self.p1CardDraw])
         self.warStack.append(self.p2Cards[self.p2CardDraw])
+        didLose()
         self.p1Cards.removeAtIndex(self.p1CardDraw)
         self.p2Cards.removeAtIndex(self.p2CardDraw)
         battle()
-        //possible option: draw index - 1, use parameters for previous index, make sure index isn't 0
-        //>> add to a card stack, append number of cards in stack to total cards
-        //>> possibly make separate battle function with random numbers as inputs
-        //possible option: draw another random card, make sure it is different than previous
         
+    }
+    
+    func didLose() {
+        if self.p1Cards.count == 0 {
+            self.p2Win = true
+        }
+        if self.p2Cards.count == 0 {
+            self.p1Win = true
+        }
     }
 
 
