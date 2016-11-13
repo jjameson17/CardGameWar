@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     let game = Game()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         warTieButtonPress.enabled = game.isWar
@@ -61,6 +62,23 @@ class ViewController: UIViewController {
     }
     
 
+    
+    func showAlert() {
+        let title = game.determineTitle()
+        let message = game.generateMessage()
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let action = UIAlertAction(title: "OK", style: .Default,
+                                   handler: { action in
+                                    self.newGame()
+        })
+        
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+
     func updateLabels() {
         P1CardTotal.text = String(game.p1Cards.count)
         P2CardTotal.text = String(game.p2Cards.count)
@@ -72,25 +90,29 @@ class ViewController: UIViewController {
     
     func gameOver() {
         if game.p1Win == true {
+            showAlert()
             //let game = Game()
-            P1CardTotal.text = "Player 1 Wins"
+            //P1CardTotal.text = "Player 1 Wins"
             warButtonPress.enabled = false
             warTieButtonPress.enabled = false
         }
         if game.p2Win == true {
-            P2CardTotal.text = "Player 2 Wins"
+            showAlert()
+            //P2CardTotal.text = "Player 2 Wins"
             warButtonPress.enabled = false
             warTieButtonPress.enabled = false
         }
         if game.draw == true {
-            P1CardTotal.text = "Draw"
-            P2CardTotal.text = "Draw"
+            showAlert()
+            //P1CardTotal.text = "Draw"
+            //P2CardTotal.text = "Draw"
             warButtonPress.enabled = false
             warTieButtonPress.enabled = false
         }
     }
-    
-
+    func newGame() {
+        
+    }
         
 
     
