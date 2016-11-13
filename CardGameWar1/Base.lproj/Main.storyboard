@@ -21,43 +21,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-Nz-8kt">
-                                <rect key="frame" x="127" y="409" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-Nz-8kt">
+                                <rect key="frame" x="48" y="514" width="125" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Battle"/>
-                                <state key="disabled">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" image="button_battle (1)"/>
                                 <connections>
                                     <action selector="warButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0oz-vx-plc"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kf-zL-oMn">
-                                <rect key="frame" x="271" y="286" width="93" height="128"/>
+                                <rect key="frame" x="29" y="243" width="93" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSE-k8-luc">
-                                <rect key="frame" x="10" y="286" width="95" height="128"/>
+                                <rect key="frame" x="256" y="243" width="95" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-d1-H6b">
-                                <rect key="frame" x="-27" y="422" width="168" height="21"/>
+                                <rect key="frame" x="253" y="379" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3I-dG-UwL">
-                                <rect key="frame" x="233" y="422" width="168" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="SRY-kI-pJ8">
+                                <rect key="frame" x="138" y="364" width="99" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-We-NLL">
-                                <rect key="frame" x="218" y="409" width="30" height="30"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-We-NLL">
+                                <rect key="frame" x="203" y="514" width="125" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="War"/>
+                                <state key="normal" image="button_war"/>
                                 <state key="disabled">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -65,18 +59,45 @@
                                     <action selector="warTieButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCc-S7-Isb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="SRY-kI-pJ8">
-                                <rect key="frame" x="138" y="286" width="99" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rounds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiD-6j-oUK">
+                                <rect key="frame" x="256" y="112" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="CBV-wL-Zdz">
+                                <rect key="frame" x="138" y="112" width="99" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-tD-lmD">
+                                <rect key="frame" x="327" y="112" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coollogo_com-84021040" translatesAutoresizingMaskIntoConstraints="NO" id="De8-Sq-ajb">
+                                <rect key="frame" x="138" y="277" width="98" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3I-dG-UwL">
+                                <rect key="frame" x="29" y="379" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.019299618120000001" green="0.80069944370000001" blue="0.034968364449999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.50374597311019897" green="0.10509110242128372" blue="0.085441507399082184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.18365316840000001" green="0.67770415289999997" blue="0.80069944370000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="P1CardImage" destination="2kf-zL-oMn" id="xhx-yL-h3C"/>
                         <outlet property="P1CardTotal" destination="F3I-dG-UwL" id="822-0x-FWl"/>
                         <outlet property="P2CardImage" destination="sSE-k8-luc" id="jUX-93-sE3"/>
                         <outlet property="P2CardTotal" destination="tPA-d1-H6b" id="frS-s6-huW"/>
+                        <outlet property="roundCountLabel" destination="hKV-tD-lmD" id="6CZ-DT-jgh"/>
                         <outlet property="warButtonPress" destination="3UW-Nz-8kt" id="3dv-oR-jpa"/>
                         <outlet property="warTieButtonPress" destination="Kib-We-NLL" id="LFB-lz-QnG"/>
                     </connections>
@@ -88,5 +109,8 @@
     </scenes>
     <resources>
         <image name="back_of_card" width="236" height="331"/>
+        <image name="button_battle (1)" width="150" height="40"/>
+        <image name="button_war" width="150" height="40"/>
+        <image name="coollogo_com-84021040" width="154" height="81"/>
     </resources>
 </document>

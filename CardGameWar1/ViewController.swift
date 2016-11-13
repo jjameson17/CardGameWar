@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         updateLabels()
     }
     @IBOutlet weak var warTieButtonPress: UIButton!
+    @IBOutlet weak var roundCountLabel: UILabel!
     
 
     
@@ -65,6 +66,7 @@ class ViewController: UIViewController {
         P2CardTotal.text = String(game.p2Cards.count)
         loadImageFromUrl(game.p1CardImage, view: P1CardImage)
         loadImageFromUrl(game.p2CardImage, view: P2CardImage)
+        roundCountLabel.text = String(game.roundCount)
         gameOver()
     }
     
@@ -77,6 +79,12 @@ class ViewController: UIViewController {
         }
         if game.p2Win == true {
             P2CardTotal.text = "Player 2 Wins"
+            warButtonPress.enabled = false
+            warTieButtonPress.enabled = false
+        }
+        if game.draw == true {
+            P1CardTotal.text = "Draw"
+            P2CardTotal.text = "Draw"
             warButtonPress.enabled = false
             warTieButtonPress.enabled = false
         }

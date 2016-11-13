@@ -21,6 +21,8 @@ class Game {
     var p2CardDraw: Int = 0
     var p1Win: Bool = false
     var p2Win: Bool = false
+    var roundCount: Int = 0
+    var draw = false
     var deckID: String?
     
     
@@ -40,6 +42,7 @@ class Game {
     
     
     func battle() {
+        self.roundCount += 1
         didLose()
         //let p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
         //let p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
@@ -67,6 +70,7 @@ class Game {
             self.isWar = true
             //war(p1CardDraw, p2CardDraw: p2CardDraw)
         }
+        didLoseRounds()
     }
     
     func convertCardValue(rawCard: String) -> Int {
@@ -92,7 +96,20 @@ class Game {
         self.p1Cards.removeAtIndex(self.p1CardDraw)
         self.p2Cards.removeAtIndex(self.p2CardDraw)
         battle()
-        
+        self.roundCount -= 1
+        didLoseRounds()
+    }
+    
+    func didLoseRounds() {
+        if self.roundCount == 100 {
+            if self.p1Cards.count > self.p2Cards.count {
+                self.p1Win = true
+            } else if self.p1Cards.count < self.p2Cards.count {
+                self.p2Win = true
+            } else {
+                self.draw = true
+            }
+        }
     }
     
     func didLose() {
