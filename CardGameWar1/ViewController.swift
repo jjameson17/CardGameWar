@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        warTieButtonPress.enabled = game.isWar
+        warTieButtonPress.isEnabled = game.isWar
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -32,15 +32,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var P2CardImage: UIImageView!
     @IBAction func warButton(sender: UIButton){
         game.battle()
-        warButtonPress.enabled = !game.isWar
-        warTieButtonPress.enabled = game.isWar
+        warButtonPress.isEnabled = !game.isWar
+        warTieButtonPress.isEnabled = game.isWar
         updateLabels()
     }
     @IBOutlet weak var warButtonPress: UIButton!
     @IBAction func warTieButton(sender: UIButton) {
-        game.war(game.p1CardDraw, p2CardDraw: game.p2CardDraw)
-        warTieButtonPress.enabled = game.isWar
-        warButtonPress.enabled = !game.isWar
+        game.war(p1CardDraw: game.p1CardDraw, p2CardDraw: game.p2CardDraw)
+        warTieButtonPress.isEnabled = game.isWar
+        warButtonPress.isEnabled = !game.isWar
         updateLabels()
     }
     @IBOutlet weak var warTieButtonPress: UIButton!
@@ -51,9 +51,9 @@ class ViewController: UIViewController {
     
     func loadImageFromUrl(url: String, view: UIImageView){
         let url = NSURL(string: url)!
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (responseData, responseUrl, error) -> Void in
+        let task = URLSession.shared.dataTask(with: url as URL) { (responseData, responseUrl, error) -> Void in
             if let data = responseData{
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
                     view.image = UIImage(data: data)
                 })
             }
@@ -67,23 +67,23 @@ class ViewController: UIViewController {
         let title = game.determineTitle()
         let message = game.generateMessage()
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "OK", style: .Default,
+        let action = UIAlertAction(title: "OK", style: .default,
                                    handler: { action in
                                     self.newGame()
         })
         
         alert.addAction(action)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
 
     func updateLabels() {
         P1CardTotal.text = String(game.p1Cards.count)
         P2CardTotal.text = String(game.p2Cards.count)
-        loadImageFromUrl(game.p1CardImage, view: P1CardImage)
-        loadImageFromUrl(game.p2CardImage, view: P2CardImage)
+        loadImageFromUrl(url: game.p1CardImage, view: P1CardImage)
+        loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
         roundCountLabel.text = String(game.roundCount)
         gameOver()
     }
@@ -93,21 +93,21 @@ class ViewController: UIViewController {
             showAlert()
             //let game = Game()
             //P1CardTotal.text = "Player 1 Wins"
-            warButtonPress.enabled = false
-            warTieButtonPress.enabled = false
+            warButtonPress.isEnabled = false
+            warTieButtonPress.isEnabled = false
         }
         if game.p2Win == true {
             showAlert()
             //P2CardTotal.text = "Player 2 Wins"
-            warButtonPress.enabled = false
-            warTieButtonPress.enabled = false
+            warButtonPress.isEnabled = false
+            warTieButtonPress.isEnabled = false
         }
         if game.draw == true {
             showAlert()
             //P1CardTotal.text = "Draw"
             //P2CardTotal.text = "Draw"
-            warButtonPress.enabled = false
-            warTieButtonPress.enabled = false
+            warButtonPress.isEnabled = false
+            warTieButtonPress.isEnabled = false
         }
     }
     func newGame() {

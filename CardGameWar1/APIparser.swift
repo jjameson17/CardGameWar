@@ -16,20 +16,22 @@ class APIParser {
     
     func newDeck() -> JSONDictionary? { //create new deck
         let url = NSURL(string: "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
-        let request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "GET"
-        var response: NSURLResponse?
+        let request = NSMutableURLRequest(url: url! as URL)
+        request.httpMethod = "GET"
+        var response: URLResponse?
         let error:NSErrorPointer = nil
         var data: NSData?
         do {
-            data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+            data = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response) as NSData?
         } catch let error1 as NSError {
-            error.memory = error1
+            //
+            //error?.memory = error1
             data = nil
         }
         if let jsonData = data {
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments)
+                let json = try JSONSerialization
+                    .jsonObject(with: jsonData as Data, options: .allowFragments)
                 return json as? JSONDictionary
             } catch {
                 print ("Error")
@@ -43,20 +45,20 @@ class APIParser {
     func deal(deckID: String?) -> JSONDictionary? {
         print(deckID)
         let url = NSURL(string: "https://deckofcardsapi.com/api/deck/\(deckID!)/draw/?count=26")
-        let request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "GET"
-        var response: NSURLResponse?
+        let request = NSMutableURLRequest(url: url! as URL)
+        request.httpMethod = "GET"
+        var response: URLResponse?
         let error:NSErrorPointer = nil
         var data: NSData?
         do {
-            data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+            data = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response) as NSData?
         } catch let error1 as NSError {
-            error.memory = error1
+            //error?.memory = error1
             data = nil
         }
         if let jsonData = data {
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .AllowFragments)
+                let json = try JSONSerialization.jsonObject(with: jsonData as Data, options: .allowFragments)
                 return json as? JSONDictionary
             } catch {
                 print ("Error")

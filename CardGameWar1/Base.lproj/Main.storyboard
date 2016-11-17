@@ -29,7 +29,7 @@
                                 </constraints>
                                 <state key="normal" image="button_battle (1)"/>
                                 <connections>
-                                    <action selector="warButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0oz-vx-plc"/>
+                                    <action selector="warButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qfI-vm-JG6"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kf-zL-oMn">
@@ -82,7 +82,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="warTieButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCc-S7-Isb"/>
+                                    <action selector="warTieButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BXD-ZU-xNB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rounds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiD-6j-oUK">
@@ -159,8 +159,8 @@
                         <outlet property="P2CardImage" destination="sSE-k8-luc" id="jUX-93-sE3"/>
                         <outlet property="P2CardTotal" destination="tPA-d1-H6b" id="frS-s6-huW"/>
                         <outlet property="roundCountLabel" destination="hKV-tD-lmD" id="6CZ-DT-jgh"/>
-                        <outlet property="warButtonPress" destination="3UW-Nz-8kt" id="3dv-oR-jpa"/>
-                        <outlet property="warTieButtonPress" destination="Kib-We-NLL" id="LFB-lz-QnG"/>
+                        <outlet property="warButtonPress" destination="3UW-Nz-8kt" id="CfJ-q0-VvF"/>
+                        <outlet property="warTieButtonPress" destination="Kib-We-NLL" id="UgI-2U-frF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

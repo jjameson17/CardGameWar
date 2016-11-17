@@ -1,3 +1,4 @@
+
 //
 //  Game.swift
 //  CardGameWar1
@@ -29,12 +30,12 @@ class Game {
     init() {
         let api = APIParser()
         let newdeck = api.newDeck()
-        self.deckID = String(newdeck!["deck_id"]!) //initialize a shuffled deck
+        self.deckID = String(describing: newdeck!["deck_id"]!) //initialize a shuffled deck
         print(self.deckID)
         if let input = self.deckID {
-            let p1Deal = api.deal(input)
+            let p1Deal = api.deal(deckID: input)
             self.p1Cards = p1Deal!["cards"] as! [JSONDictionary] //deal cards for player 1
-            let p2Deal = api.deal(input)
+            let p2Deal = api.deal(deckID: input)
             self.p2Cards = p2Deal!["cards"] as! [JSONDictionary] //deal cards for player 2
         }
 
@@ -48,22 +49,22 @@ class Game {
         //let p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
         self.p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
         self.p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
-        let p1CardVal = convertCardValue(self.p1Cards[self.p1CardDraw]["value"]! as! String) // change to Int
-        let p2CardVal = convertCardValue(self.p2Cards[self.p2CardDraw]["value"]! as! String) //change to Int
+        let p1CardVal = convertCardValue(rawCard: self.p1Cards[self.p1CardDraw]["value"]! as! String) // change to Int
+        let p2CardVal = convertCardValue(rawCard: self.p2Cards[self.p2CardDraw]["value"]! as! String) //change to Int
         self.p1CardImage = self.p1Cards[self.p1CardDraw]["image"]! as! String
         self.p2CardImage = self.p2Cards[self.p2CardDraw]["image"]! as! String
         if p1CardVal > p2CardVal {
             self.p1Cards.append(self.p2Cards[self.p2CardDraw])
-            self.p2Cards.removeAtIndex(self.p2CardDraw)
+            self.p2Cards.remove(at: self.p2CardDraw)
             didLose()
-            self.p1Cards.appendContentsOf(self.warStack)
+            self.p1Cards.append(contentsOf: self.warStack)
             self.warStack.removeAll()
             self.isWar = false
         } else if p1CardVal < p2CardVal {
             self.p2Cards.append(self.p1Cards[self.p1CardDraw])
-            self.p1Cards.removeAtIndex(self.p1CardDraw)
+            self.p1Cards.remove(at: self.p1CardDraw)
             didLose()
-            self.p2Cards.appendContentsOf(self.warStack)
+            self.p2Cards.append(contentsOf: self.warStack)
             self.warStack.removeAll()
             self.isWar = false
         } else {
@@ -93,8 +94,8 @@ class Game {
         self.warStack.append(self.p1Cards[self.p1CardDraw])
         self.warStack.append(self.p2Cards[self.p2CardDraw])
         didLose()
-        self.p1Cards.removeAtIndex(self.p1CardDraw)
-        self.p2Cards.removeAtIndex(self.p2CardDraw)
+        self.p1Cards.remove(at: self.p1CardDraw)
+        self.p2Cards.remove(at: self.p2CardDraw)
         battle()
         self.roundCount -= 1
         didLoseRounds()
