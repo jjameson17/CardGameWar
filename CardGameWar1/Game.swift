@@ -101,7 +101,7 @@ class Game {
     }
     
     func didLoseRounds() {
-        if self.roundCount == 100 {
+        if self.roundCount == 50 {
             if self.p1Cards.count > self.p2Cards.count {
                 self.p1Win = true
             } else if self.p1Cards.count < self.p2Cards.count {
