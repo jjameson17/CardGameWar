@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35755BBD1DE0F3E400932D96 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 35755BBC1DE0F3E400932D96 /* Podfile */; };
 		359F1D901DD10F6400C5D096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1D8F1DD10F6400C5D096 /* AppDelegate.swift */; };
-		359F1D921DD10F6400C5D096 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1D911DD10F6400C5D096 /* ViewController.swift */; };
+		359F1D921DD10F6400C5D096 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1D911DD10F6400C5D096 /* GameViewController.swift */; };
 		359F1D951DD10F6400C5D096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359F1D931DD10F6400C5D096 /* Main.storyboard */; };
 		359F1D971DD10F6400C5D096 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 359F1D961DD10F6400C5D096 /* Assets.xcassets */; };
 		359F1D9A1DD10F6400C5D096 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 359F1D981DD10F6400C5D096 /* LaunchScreen.storyboard */; };
@@ -16,6 +17,14 @@
 		359F1DB01DD10F6400C5D096 /* CardGameWar1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1DAF1DD10F6400C5D096 /* CardGameWar1UITests.swift */; };
 		359F1DBE1DD10FB200C5D096 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359F1DBD1DD10FB200C5D096 /* Game.swift */; };
 		35FF87521DD11C990011C913 /* APIparser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF87511DD11C990011C913 /* APIparser.swift */; };
+		35FF87B31DE0EB3A0011C913 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF87B21DE0EB3A0011C913 /* UsersViewController.swift */; };
+		35FF87BA1DE0EC240011C913 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF87B51DE0EC240011C913 /* BaseCell.swift */; };
+		35FF87BB1DE0EC240011C913 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF87B61DE0EC240011C913 /* UserCell.swift */; };
+		35FF87BC1DE0EC240011C913 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35FF87B71DE0EC240011C913 /* UserCell.xib */; };
+		35FF87BD1DE0EC240011C913 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF87B81DE0EC240011C913 /* ChatCell.swift */; };
+		35FF87BE1DE0EC240011C913 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35FF87B91DE0EC240011C913 /* ChatCell.xib */; };
+		35FF87C01DE0EC9E0011C913 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF87BF1DE0EC9E0011C913 /* SocketIOManager.swift */; };
+		5ADC206CA354096D6B935238 /* Pods_CardGameWar1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 274D7A2BCD9CCD5359F6EF34 /* Pods_CardGameWar1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		274D7A2BCD9CCD5359F6EF34 /* Pods_CardGameWar1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGameWar1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35755BBC1DE0F3E400932D96 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		359F1D8C1DD10F6400C5D096 /* CardGameWar1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGameWar1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359F1D8F1DD10F6400C5D096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		359F1D911DD10F6400C5D096 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		359F1D911DD10F6400C5D096 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		359F1D941DD10F6400C5D096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		359F1D961DD10F6400C5D096 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		359F1D991DD10F6400C5D096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +62,15 @@
 		359F1DB11DD10F6400C5D096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		359F1DBD1DD10FB200C5D096 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		35FF87511DD11C990011C913 /* APIparser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIparser.swift; sourceTree = "<group>"; };
+		35FF87B21DE0EB3A0011C913 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		35FF87B51DE0EC240011C913 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		35FF87B61DE0EC240011C913 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		35FF87B71DE0EC240011C913 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		35FF87B81DE0EC240011C913 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		35FF87B91DE0EC240011C913 /* ChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		35FF87BF1DE0EC9E0011C913 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		3C5F83B1B7720F8700E586CA /* Pods-CardGameWar1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGameWar1.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGameWar1/Pods-CardGameWar1.release.xcconfig"; sourceTree = "<group>"; };
+		B91BBE8364D8BC820746107F /* Pods-CardGameWar1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGameWar1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGameWar1/Pods-CardGameWar1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ADC206CA354096D6B935238 /* Pods_CardGameWar1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +102,13 @@
 		359F1D831DD10F6400C5D096 = {
 			isa = PBXGroup;
 			children = (
+				35755BBC1DE0F3E400932D96 /* Podfile */,
 				359F1D8E1DD10F6400C5D096 /* CardGameWar1 */,
 				359F1DA31DD10F6400C5D096 /* CardGameWar1Tests */,
 				359F1DAE1DD10F6400C5D096 /* CardGameWar1UITests */,
 				359F1D8D1DD10F6400C5D096 /* Products */,
+				93DC2FD4C12CF6FA0A226750 /* Frameworks */,
+				8B3040142509A9468BEF53D5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,8 +126,11 @@
 			isa = PBXGroup;
 			children = (
 				359F1D8F1DD10F6400C5D096 /* AppDelegate.swift */,
-				359F1D911DD10F6400C5D096 /* ViewController.swift */,
+				35FF87B21DE0EB3A0011C913 /* UsersViewController.swift */,
+				359F1D911DD10F6400C5D096 /* GameViewController.swift */,
 				359F1D931DD10F6400C5D096 /* Main.storyboard */,
+				35FF87BF1DE0EC9E0011C913 /* SocketIOManager.swift */,
+				35FF87B41DE0EBD20011C913 /* Cells */,
 				359F1D961DD10F6400C5D096 /* Assets.xcassets */,
 				359F1D981DD10F6400C5D096 /* LaunchScreen.storyboard */,
 				359F1D9B1DD10F6400C5D096 /* Info.plist */,
@@ -131,6 +158,35 @@
 			path = CardGameWar1UITests;
 			sourceTree = "<group>";
 		};
+		35FF87B41DE0EBD20011C913 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				35FF87B51DE0EC240011C913 /* BaseCell.swift */,
+				35FF87B61DE0EC240011C913 /* UserCell.swift */,
+				35FF87B71DE0EC240011C913 /* UserCell.xib */,
+				35FF87B81DE0EC240011C913 /* ChatCell.swift */,
+				35FF87B91DE0EC240011C913 /* ChatCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		8B3040142509A9468BEF53D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B91BBE8364D8BC820746107F /* Pods-CardGameWar1.debug.xcconfig */,
+				3C5F83B1B7720F8700E586CA /* Pods-CardGameWar1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		93DC2FD4C12CF6FA0A226750 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				274D7A2BCD9CCD5359F6EF34 /* Pods_CardGameWar1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 359F1DB41DD10F6400C5D096 /* Build configuration list for PBXNativeTarget "CardGameWar1" */;
 			buildPhases = (
+				79E848629E5F2E6F243CB0A5 /* [CP] Check Pods Manifest.lock */,
 				359F1D881DD10F6400C5D096 /* Sources */,
 				359F1D891DD10F6400C5D096 /* Frameworks */,
 				359F1D8A1DD10F6400C5D096 /* Resources */,
+				4B3D351B981330E263472D26 /* [CP] Embed Pods Frameworks */,
+				523A62059573CA3B72D968A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,7 +297,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35755BBD1DE0F3E400932D96 /* Podfile in Resources */,
+				35FF87BC1DE0EC240011C913 /* UserCell.xib in Resources */,
 				359F1D9A1DD10F6400C5D096 /* LaunchScreen.storyboard in Resources */,
+				35FF87BE1DE0EC240011C913 /* ChatCell.xib in Resources */,
 				359F1D971DD10F6400C5D096 /* Assets.xcassets in Resources */,
 				359F1D951DD10F6400C5D096 /* Main.storyboard in Resources */,
 			);
@@ -260,15 +322,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B3D351B981330E263472D26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardGameWar1/Pods-CardGameWar1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		523A62059573CA3B72D968A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardGameWar1/Pods-CardGameWar1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79E848629E5F2E6F243CB0A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		359F1D881DD10F6400C5D096 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				359F1D921DD10F6400C5D096 /* ViewController.swift in Sources */,
+				359F1D921DD10F6400C5D096 /* GameViewController.swift in Sources */,
+				35FF87BD1DE0EC240011C913 /* ChatCell.swift in Sources */,
 				35FF87521DD11C990011C913 /* APIparser.swift in Sources */,
+				35FF87B31DE0EB3A0011C913 /* UsersViewController.swift in Sources */,
+				35FF87C01DE0EC9E0011C913 /* SocketIOManager.swift in Sources */,
 				359F1DBE1DD10FB200C5D096 /* Game.swift in Sources */,
+				35FF87BA1DE0EC240011C913 /* BaseCell.swift in Sources */,
 				359F1D901DD10F6400C5D096 /* AppDelegate.swift in Sources */,
+				35FF87BB1DE0EC240011C913 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +531,7 @@
 		};
 		359F1DB51DD10F6400C5D096 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B91BBE8364D8BC820746107F /* Pods-CardGameWar1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CardGameWar1/Info.plist;
@@ -428,6 +544,7 @@
 		};
 		359F1DB61DD10F6400C5D096 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C5F83B1B7720F8700E586CA /* Pods-CardGameWar1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CardGameWar1/Info.plist;
