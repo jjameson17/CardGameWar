@@ -59,9 +59,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            if identifier == "idSegueJoinChat" {
-                let chatViewController = segue.destination as! GameViewController
-                //chatViewController.nickname = nickname
+            if identifier == "idSegueStartGame" {
+                let gameViewController = segue.destination as! GameViewController
+                gameViewController.nickname = nickname
             }
         }
     }

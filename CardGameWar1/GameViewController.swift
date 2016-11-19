@@ -11,11 +11,13 @@ import UIKit
 class GameViewController: UIViewController {
     
     let game = Game()
+    var nickname: String!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         warTieButtonPress.isEnabled = game.isWar
+        updateLabels()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -45,6 +47,7 @@ class GameViewController: UIViewController {
     }
     @IBOutlet weak var warTieButtonPress: UIButton!
     @IBOutlet weak var roundCountLabel: UILabel!
+    @IBOutlet weak var nicknameLabel: UILabel!
     
 
     
@@ -85,6 +88,7 @@ class GameViewController: UIViewController {
         loadImageFromUrl(url: game.p1CardImage, view: P1CardImage)
         loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
         roundCountLabel.text = String(game.roundCount)
+        nicknameLabel.text = nickname
         gameOver()
     }
     
