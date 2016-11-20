@@ -61,4 +61,12 @@ class SocketIOManager: NSObject {
     func sendMessage(message: String, withNickname nickname: String) {
         socket.emit("chatMessage", nickname, message)
     }
+    
+    func startGame(completionHandler: @escaping (_ hand:  [[String: AnyObject]]?) -> Void) {
+        socket.emit("startedGame")
+        
+        socket.on("startedGame") { (hand, ack) -> Void in
+            completionHandler(hand[0] as? [[String: AnyObject]])
+        }
+    }
 }
