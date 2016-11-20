@@ -10,6 +10,7 @@ import UIKit
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tblUserList: UITableView!
+    @IBOutlet weak var startGameButton: UIButton!
     
     
     var users = [[String: AnyObject]]()
@@ -21,6 +22,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         // Do any additional setup after loading the view.
     }
@@ -53,6 +55,14 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    func updateButton() {
+        print (tblUserList.numberOfRows(inSection: 0))
+        if tblUserList.numberOfRows(inSection: 0) == 2 {
+            startGameButton.isEnabled = true
+        } else {
+            startGameButton.isEnabled = false
+        }
+    }
     
     
     // MARK: - Navigation
@@ -105,6 +115,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             self.users = userList!
                             self.tblUserList.reloadData()
                             self.tblUserList.isHidden = false
+                            self.updateButton()
                         } else {
                             self.askForNickname(message: "Only 2 players can play at once")
                         }

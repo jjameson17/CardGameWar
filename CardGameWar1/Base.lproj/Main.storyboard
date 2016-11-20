@@ -38,6 +38,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="startGameButton" destination="7eI-M5-zvc" id="8v1-nl-VT7"/>
                         <outlet property="tblUserList" destination="Mkf-5u-uoC" id="5zH-95-XgU"/>
                     </connections>
                 </viewController>
