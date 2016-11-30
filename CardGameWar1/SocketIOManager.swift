@@ -42,6 +42,7 @@ class SocketIOManager: NSObject {
             completionHandler(nil)
         }
         
+        // someone else started the game
         socket.on("startedGame") { (dataArray, ack) -> Void in
             SocketIOManager.inProgress = true
             let empty = [[String: AnyObject]]()
@@ -75,5 +76,11 @@ class SocketIOManager: NSObject {
         socket.on("startedGame") { (hand, ack) -> Void in
             completionHandler(hand[0] as? [[String: AnyObject]])
         }
+        
+        socket.on("join game") { (hand, ack) -> Void in
+            print(hand)
+            completionHandler(hand[0] as? [[String: AnyObject]])
+        }
+
     }
 }
