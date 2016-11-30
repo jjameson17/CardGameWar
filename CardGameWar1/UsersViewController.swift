@@ -12,7 +12,6 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tblUserList: UITableView!
     @IBOutlet weak var startGameButton: UIButton!
     
-    
     var users = [[String: AnyObject]]()
     
     var nickname: String? = nil
@@ -57,10 +56,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func updateButton() {
         print (tblUserList.numberOfRows(inSection: 0))
-        if tblUserList.numberOfRows(inSection: 0) == 2 {
-            startGameButton.isEnabled = true
-        } else {
+        if tblUserList.numberOfRows(inSection: 0) == 1 {
             startGameButton.isEnabled = false
+        } else {
+            startGameButton.isEnabled = true
+        }
+        
+        if SocketIOManager.inProgress {
+            startGameButton.setTitle("Join Current Game", for: .normal)
+        } else {
+            startGameButton.setTitle("Start New Game", for: .normal)
         }
     }
     
@@ -111,11 +116,14 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 SocketIOManager.sharedInstance.connectToServerWithNickname(nickname: textfield.text!, completionHandler: { (userList) -> Void in
                     DispatchQueue.main.async(execute: { () -> Void in
+                        print(userList)
                         if userList != nil {
                             self.users = userList!
                             self.tblUserList.reloadData()
                             self.tblUserList.isHidden = false
                             self.updateButton()
+                        } else if userList?.count == 0 {
+                            
                         } else {
                             self.askForNickname(message: "Only 2 players can play at once")
                         }

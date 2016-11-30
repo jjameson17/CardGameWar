@@ -12,6 +12,7 @@ import SocketIO
 
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
+    static var inProgress = false
     
     override init() {
         super.init()
@@ -39,6 +40,12 @@ class SocketIOManager: NSObject {
         // if cannot connect we will receive the denyAccess event
         socket.on("denyAccess") { (data, ack) -> Void in
             completionHandler(nil)
+        }
+        
+        socket.on("startedGame") { (dataArray, ack) -> Void in
+            SocketIOManager.inProgress = true
+            let empty = [[String: AnyObject]]()
+            completionHandler(empty)
         }
     }
     
