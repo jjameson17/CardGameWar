@@ -47,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		274D7A2BCD9CCD5359F6EF34 /* Pods_CardGameWar1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGameWar1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		35755BBC1DE0F3E400932D96 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		35755BBC1DE0F3E400932D96 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		35755BBE1DE21AA300932D96 /* War.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = War.swift; sourceTree = "<group>"; };
 		359F1D8C1DD10F6400C5D096 /* CardGameWar1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGameWar1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		359F1D8F1DD10F6400C5D096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +261,7 @@
 				TargetAttributes = {
 					359F1D8B1DD10F6400C5D096 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 36NA84VV7G;
 						ProvisioningStyle = Automatic;
 					};
 					359F1D9F1DD10F6400C5D096 = {
@@ -538,6 +539,9 @@
 			baseConfigurationReference = B91BBE8364D8BC820746107F /* Pods-CardGameWar1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 36NA84VV7G;
 				INFOPLIST_FILE = CardGameWar1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jameson.CardGameWar1;
@@ -551,6 +555,9 @@
 			baseConfigurationReference = 3C5F83B1B7720F8700E586CA /* Pods-CardGameWar1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 36NA84VV7G;
 				INFOPLIST_FILE = CardGameWar1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jameson.CardGameWar1;
