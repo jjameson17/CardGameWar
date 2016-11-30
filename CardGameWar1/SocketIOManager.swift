@@ -66,8 +66,12 @@ class SocketIOManager: NSObject {
         }
     }
     
-    func sendMessage(message: String, withNickname nickname: String) {
-        socket.emit("chatMessage", nickname, message)
+    func makeBattleMove() {
+        socket.emit("made battle move")
+    }
+
+    func makeWarMove() {
+        socket.emit("made war move")
     }
     
     func startGame(completionHandler: @escaping (_ hand:  [[String: AnyObject]]?) -> Void) {
@@ -81,6 +85,15 @@ class SocketIOManager: NSObject {
             print(hand)
             completionHandler(hand[0] as? [[String: AnyObject]])
         }
-
+    }
+    
+    func listenForMoves(completionHandler: @escaping (_ moveType: String) -> Void) {
+        socket.on("made battle move") { (ack) -> Void in
+            completionHandler("battle")
+        }
+        
+        socket.on("made war move") { (ack) -> Void in
+            completionHandler("war")
+        }
     }
 }

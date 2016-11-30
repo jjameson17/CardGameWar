@@ -39,6 +39,10 @@ class Game {
             self.p2Cards = p2Deal!["cards"] as! [JSONDictionary] //deal cards for player 2
         }
 
+        
+        SocketIOManager.sharedInstance.listenForMoves { (typeOfMove: String) -> Void in
+            print(typeOfMove)
+        }
     }
     
     
@@ -72,6 +76,8 @@ class Game {
             //war(p1CardDraw, p2CardDraw: p2CardDraw)
         }
         didLoseRounds()
+        
+        SocketIOManager.sharedInstance.makeBattleMove()
     }
     
     func convertCardValue(rawCard: String) -> Int {
@@ -99,6 +105,8 @@ class Game {
         battle()
         self.roundCount -= 1
         didLoseRounds()
+        
+        SocketIOManager.sharedInstance.makeWarMove()
     }
     
     func didLoseRounds() {
