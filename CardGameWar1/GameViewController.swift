@@ -90,6 +90,13 @@ class GameViewController: UIViewController {
         loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
         roundCountLabel.text = String(game.roundCount)
         nicknameLabel.text = nickname
+        if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
+            warButtonPress.isEnabled = true
+        } else {
+            warButtonPress.isEnabled = false
+        }
+        print(game.localPlayerMove)
+        print(SocketIOManager.sharedInstance.playerTurn)
         gameOver()
     }
     

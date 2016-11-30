@@ -13,6 +13,8 @@ import SocketIO
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
     static var inProgress = false
+    var battlePressed: Bool = false
+    var playerTurn: Int = 0
     
     override init() {
         super.init()
@@ -68,6 +70,8 @@ class SocketIOManager: NSObject {
     
     func makeBattleMove() {
         socket.emit("made battle move")
+        print("bbb")
+        self.playerTurn += 1
     }
 
     func makeWarMove() {
@@ -90,6 +94,7 @@ class SocketIOManager: NSObject {
     func listenForMoves(completionHandler: @escaping (_ moveType: String) -> Void) {
         socket.on("made battle move") { (ack) -> Void in
             completionHandler("battle")
+            print("aaa")
         }
         
         socket.on("made war move") { (ack) -> Void in
