@@ -70,8 +70,8 @@ class SocketIOManager: NSObject {
     
     func makeBattleMove() {
         socket.emit("made battle move")
-        print("bbb")
-        self.playerTurn += 1
+        //print("bbb")
+        //self.playerTurn += 1
     }
 
     func makeWarMove() {
@@ -95,6 +95,8 @@ class SocketIOManager: NSObject {
         socket.on("made battle move") { (ack) -> Void in
             completionHandler("battle")
             print("aaa")
+            self.playerTurn += 1
+            print(self.playerTurn)
         }
         
         socket.on("made war move") { (ack) -> Void in
