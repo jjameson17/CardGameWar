@@ -13,7 +13,13 @@ class War {
     var warStack: [JSONDictionary] = []
     var roundCount: Int = 0
     
-    init() { }
+    init() {
+        SocketIOManager.sharedInstance.startGame() { (hand) -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
+                self.playerDeck = hand!
+            })
+        }
+    }
     
     func drawRandomCard() -> JSONDictionary {
         let ranNum = Int(arc4random_uniform(UInt32(self.playerDeck.count)))
