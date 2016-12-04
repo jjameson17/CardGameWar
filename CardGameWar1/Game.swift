@@ -32,27 +32,11 @@ class Game {
         let api = APIParser()
         let newdeck = api.newDeck()
         self.deckID = String(describing: newdeck!["deck_id"]!) //initialize a shuffled deck
-        print(self.deckID)
         if let input = self.deckID {
             let p1Deal = api.deal(deckID: input)
             self.p1Cards = p1Deal!["cards"] as! [JSONDictionary] //deal cards for player 1
             let p2Deal = api.deal(deckID: input)
             self.p2Cards = p2Deal!["cards"] as! [JSONDictionary] //deal cards for player 2
-        }
-        //SocketIOManager.sharedInstance.startGame() { (hand) -> Void in
-        //    DispatchQueue.main.async(execute: { () -> Void in
-        //        print("///////")
-        //        print(hand)
-        //        print(hand!.count)
-        //        print("/////////")
-        //        self.p1Cards = hand!
-        //        self.p2Cards = hand!
-        //    })
-        //}
-
-        
-        SocketIOManager.sharedInstance.listenForMoves { (typeOfMove: String) -> Void in
-            print(typeOfMove)
         }
     }
     
@@ -110,8 +94,7 @@ class Game {
         }
     }
     
-    
-    func war(p1CardDraw: Int, p2CardDraw: Int) {
+    func war() {
         didLose()
         self.warStack.append(self.p1Cards[self.p1CardDraw])
         self.warStack.append(self.p2Cards[self.p2CardDraw])
