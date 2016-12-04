@@ -93,8 +93,8 @@ class SocketIOManager: NSObject {
     
     func listenForMoves(completionHandler: @escaping (_ moveType: String) -> Void) {
         socket.on("made battle move") { (ack) -> Void in
-            completionHandler("battle")
             self.playerTurn += 1
+            completionHandler("battle")
             print("player Turn:", self.playerTurn)
         }
         
