@@ -13,6 +13,8 @@ import SocketIO
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
     static var inProgress = false
+    var battlePressed: Bool = false
+    var playerTurn: Int = 0
     
     override init() {
         super.init()
@@ -30,7 +32,6 @@ class SocketIOManager: NSObject {
     
     func connectToServerWithNickname(nickname: String, completionHandler: @escaping (_ userList: [[String: AnyObject]]?) -> Void) {
         socket.emit("connectUser", nickname)
-        print(nickname)
         
         // if we can connect we will receive the userList event
         socket.on("userList") { ( dataArray, ack) -> Void in
@@ -68,6 +69,8 @@ class SocketIOManager: NSObject {
     
     func makeBattleMove() {
         socket.emit("made battle move")
+        //print("bbb")
+        //self.playerTurn += 1
     }
 
     func makeWarMove() {
@@ -82,14 +85,15 @@ class SocketIOManager: NSObject {
         }
         
         socket.on("join game") { (hand, ack) -> Void in
-            print(hand)
             completionHandler(hand[0] as? [[String: AnyObject]])
         }
     }
     
     func listenForMoves(completionHandler: @escaping (_ moveType: String) -> Void) {
         socket.on("made battle move") { (ack) -> Void in
+            self.playerTurn += 1
             completionHandler("battle")
+            print("player Turn:", self.playerTurn)
         }
         
         socket.on("made war move") { (ack) -> Void in

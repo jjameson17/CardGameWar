@@ -25,40 +25,38 @@ class Game {
     var roundCount: Int = 0
     var draw = false
     var deckID: String?
+    var localPlayerMove: Int = 0
     
     
     init() {
         let api = APIParser()
         let newdeck = api.newDeck()
         self.deckID = String(describing: newdeck!["deck_id"]!) //initialize a shuffled deck
-        print(self.deckID)
         if let input = self.deckID {
             let p1Deal = api.deal(deckID: input)
             self.p1Cards = p1Deal!["cards"] as! [JSONDictionary] //deal cards for player 1
             let p2Deal = api.deal(deckID: input)
             self.p2Cards = p2Deal!["cards"] as! [JSONDictionary] //deal cards for player 2
         }
-
-        
-        SocketIOManager.sharedInstance.listenForMoves { (typeOfMove: String) -> Void in
-            print(typeOfMove)
-        }
     }
     
     
     func battle() {
+        self.localPlayerMove += 1
         self.roundCount += 1
         didLose()
         //let p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
         //let p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
-        self.p1CardDraw = Int(arc4random_uniform(UInt32(self.p1Cards.count)))
-        self.p2CardDraw = Int(arc4random_uniform(UInt32(self.p2Cards.count)))
+        self.p1CardDraw = 0 //Int(arc4random_uniform(UInt32(self.p1Cards.count)))
+        self.p2CardDraw = 0 //Int(arc4random_uniform(UInt32(self.p2Cards.count)))
         let p1CardVal = convertCardValue(rawCard: self.p1Cards[self.p1CardDraw]["value"]! as! String) // change to Int
         let p2CardVal = convertCardValue(rawCard: self.p2Cards[self.p2CardDraw]["value"]! as! String) //change to Int
         self.p1CardImage = self.p1Cards[self.p1CardDraw]["image"]! as! String
         self.p2CardImage = self.p2Cards[self.p2CardDraw]["image"]! as! String
         if p1CardVal > p2CardVal {
             self.p1Cards.append(self.p2Cards[self.p2CardDraw])
+            self.p1Cards.append(self.p1Cards[self.p1CardDraw])
+            self.p1Cards.remove(at: self.p1CardDraw)
             self.p2Cards.remove(at: self.p2CardDraw)
             didLose()
             self.p1Cards.append(contentsOf: self.warStack)
@@ -66,6 +64,8 @@ class Game {
             self.isWar = false
         } else if p1CardVal < p2CardVal {
             self.p2Cards.append(self.p1Cards[self.p1CardDraw])
+            self.p2Cards.append(self.p2Cards[self.p2CardDraw])
+            self.p2Cards.remove(at: self.p2CardDraw)
             self.p1Cards.remove(at: self.p1CardDraw)
             didLose()
             self.p2Cards.append(contentsOf: self.warStack)
@@ -94,8 +94,7 @@ class Game {
         }
     }
     
-    
-    func war(p1CardDraw: Int, p2CardDraw: Int) {
+    func war() {
         didLose()
         self.warStack.append(self.p1Cards[self.p1CardDraw])
         self.warStack.append(self.p2Cards[self.p2CardDraw])

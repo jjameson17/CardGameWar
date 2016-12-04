@@ -55,7 +55,6 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func updateButton() {
-        print (tblUserList.numberOfRows(inSection: 0))
         if tblUserList.numberOfRows(inSection: 0) == 1 {
             startGameButton.isEnabled = false
         } else {
@@ -102,7 +101,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func askForNickname(message: String = "Please enter a nickname") {
-        let alertController = UIAlertController(title: "SocketChat", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Welcome to War", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         alertController.addTextField(configurationHandler: nil)
         
@@ -116,7 +115,6 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 SocketIOManager.sharedInstance.connectToServerWithNickname(nickname: textfield.text!, completionHandler: { (userList) -> Void in
                     DispatchQueue.main.async(execute: { () -> Void in
-                        print(userList)
                         if userList != nil {
                             self.users = userList!
                             self.tblUserList.reloadData()

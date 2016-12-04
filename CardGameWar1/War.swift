@@ -16,10 +16,6 @@ class War {
     init() {
         SocketIOManager.sharedInstance.startGame() { (hand) -> Void in
             DispatchQueue.main.async(execute: { () -> Void in
-                print("///////")
-                print(hand)
-                print(hand?[0] ?? "oh no")
-                print("/////////")
                 self.playerDeck = hand!
             })
         }

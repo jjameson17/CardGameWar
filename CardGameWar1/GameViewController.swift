@@ -14,26 +14,25 @@ class GameViewController: UIViewController {
     let war = War()
     var nickname: String!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         warTieButtonPress.isEnabled = game.isWar
         updateLabels()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.listenforOpponentMoves()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    
     @IBOutlet weak var P1CardTotal: UILabel!
     @IBOutlet weak var P2CardTotal: UILabel!
     @IBOutlet weak var P1CardImage: UIImageView!
     @IBOutlet weak var P2CardImage: UIImageView!
-    @IBAction func warButton(sender: UIButton){
+    @IBAction func warButton(sender: UIButton) {
         game.battle()
         warButtonPress.isEnabled = !game.isWar
         warTieButtonPress.isEnabled = game.isWar
@@ -41,7 +40,7 @@ class GameViewController: UIViewController {
     }
     @IBOutlet weak var warButtonPress: UIButton!
     @IBAction func warTieButton(sender: UIButton) {
-        game.war(p1CardDraw: game.p1CardDraw, p2CardDraw: game.p2CardDraw)
+        game.war()
         warTieButtonPress.isEnabled = game.isWar
         warButtonPress.isEnabled = !game.isWar
         updateLabels()
@@ -49,9 +48,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var warTieButtonPress: UIButton!
     @IBOutlet weak var roundCountLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
-    
-
-    
     
     func loadImageFromUrl(url: String, view: UIImageView){
         let url = NSURL(string: url)!
@@ -64,8 +60,6 @@ class GameViewController: UIViewController {
         }
         task.resume()
     }
-    
-
     
     func showAlert() {
         let title = game.determineTitle()
@@ -90,7 +84,21 @@ class GameViewController: UIViewController {
         loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
         roundCountLabel.text = String(game.roundCount)
         nicknameLabel.text = nickname
+        if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
+            //print("enabled")
+            warButtonPress.isEnabled = true
+        } else {
+            //print("disabled")
+            warButtonPress.isEnabled = false
+        }
         gameOver()
+    }
+    
+    func listenforOpponentMoves() {
+        SocketIOManager.sharedInstance.listenForMoves { (typeOfMove: String) -> Void in
+            print(typeOfMove)
+            self.updateLabels()
+        }
     }
     
     func gameOver() {
@@ -115,13 +123,8 @@ class GameViewController: UIViewController {
             warTieButtonPress.isEnabled = false
         }
     }
-    func newGame() {
-        
-    }
-        
-
     
-
-
+    func newGame() {  }
+    
 }
 
