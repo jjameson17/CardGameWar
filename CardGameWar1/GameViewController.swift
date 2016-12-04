@@ -49,6 +49,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var warTieButtonPress: UIButton!
     @IBOutlet weak var roundCountLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
+    @IBAction func updateLabelsButton(sender: UIButton) {
+        updateLabels()
+    }
     
 
     
@@ -90,7 +93,7 @@ class GameViewController: UIViewController {
         loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
         roundCountLabel.text = String(game.roundCount)
         nicknameLabel.text = nickname
-        if SocketIOManager.sharedInstance.playerTurn + 1 >= (game.localPlayerMove * 2) {
+        if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
             //print("enabled")
             warButtonPress.isEnabled = true
         } else {
