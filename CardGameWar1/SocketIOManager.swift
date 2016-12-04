@@ -32,7 +32,6 @@ class SocketIOManager: NSObject {
     
     func connectToServerWithNickname(nickname: String, completionHandler: @escaping (_ userList: [[String: AnyObject]]?) -> Void) {
         socket.emit("connectUser", nickname)
-        print(nickname)
         
         // if we can connect we will receive the userList event
         socket.on("userList") { ( dataArray, ack) -> Void in
@@ -86,7 +85,6 @@ class SocketIOManager: NSObject {
         }
         
         socket.on("join game") { (hand, ack) -> Void in
-            print(hand)
             completionHandler(hand[0] as? [[String: AnyObject]])
         }
     }
