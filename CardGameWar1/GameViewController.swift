@@ -46,7 +46,9 @@ class GameViewController: UIViewController {
     }
     @IBOutlet weak var warTieButtonPress: UIButton!
     @IBOutlet weak var roundCountLabel: UILabel!
-    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var scoreboardPlayer1Label: UILabel!
+    @IBOutlet weak var scoreboardPlayer2Label: UILabel!
+
     
     func loadImageFromUrl(url: String, view: UIImageView){
         let url = NSURL(string: url)!
@@ -82,7 +84,6 @@ class GameViewController: UIViewController {
         loadImageFromUrl(url: game.p1CardImage, view: P1CardImage)
         loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
         roundCountLabel.text = String(game.roundCount)
-        nicknameLabel.text = nickname
         if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
             //print("enabled")
             warButtonPress.isEnabled = true

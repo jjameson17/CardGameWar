@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Z9-lj-ZOb">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Z9-lj-ZOb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -164,13 +164,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdX-iz-ViS">
-                                <rect key="frame" x="105" y="578" width="166" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.50374597311019897" green="0.10509110242128372" blue="0.085441507399082184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.18365316840000001" green="0.67770415289999997" blue="0.80069944370000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -202,8 +195,9 @@
                         <outlet property="P1CardTotal" destination="F3I-dG-UwL" id="822-0x-FWl"/>
                         <outlet property="P2CardImage" destination="sSE-k8-luc" id="jUX-93-sE3"/>
                         <outlet property="P2CardTotal" destination="tPA-d1-H6b" id="frS-s6-huW"/>
-                        <outlet property="nicknameLabel" destination="OdX-iz-ViS" id="h6H-Fz-2Eh"/>
                         <outlet property="roundCountLabel" destination="hKV-tD-lmD" id="6CZ-DT-jgh"/>
+                        <outlet property="scoreboardPlayer1Label" destination="NGo-Rh-n2i" id="EtA-xB-7L1"/>
+                        <outlet property="scoreboardPlayer2Label" destination="Ai9-Bw-p1V" id="ptq-xd-w3T"/>
                         <outlet property="warButtonPress" destination="3UW-Nz-8kt" id="CfJ-q0-VvF"/>
                         <outlet property="warTieButtonPress" destination="Kib-We-NLL" id="UgI-2U-frF"/>
                     </connections>
