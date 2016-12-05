@@ -81,6 +81,8 @@ class GameViewController: UIViewController {
         P2CardTotal.text = String(game.p2Cards.count)
         loadImageFromUrl(url: game.p1CardImage, view: P1CardImage)
         loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
+        scoreboardPlayer1Label.text = userNames[0]
+        scoreboardPlayer2Label.text = userNames[1]
         roundCountLabel.text = String(game.roundCount)
         if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
             //print("enabled")
