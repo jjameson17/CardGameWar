@@ -11,7 +11,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     let game = Game()
-    var nickname: String!
+    var userNames: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +80,6 @@ class GameViewController: UIViewController {
         loadImageFromUrl(url: game.p1CardImage, view: P1CardImage)
         loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
         roundCountLabel.text = String(game.roundCount)
-        nicknameLabel.text = nickname
         if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
             //print("enabled")
             warButtonPress.isEnabled = true

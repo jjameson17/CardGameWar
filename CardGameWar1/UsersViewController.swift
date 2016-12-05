@@ -63,7 +63,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let identifier = segue.identifier {
             if identifier == "idSegueStartGame" {
                 let gameViewController = segue.destination as! GameViewController
-                gameViewController.nickname = nickname
+                gameViewController.userNames = users.flatMap { String(describing: $0["nickname"]!) }
             }
         }
     }
