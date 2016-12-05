@@ -11,7 +11,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     let game = Game()
-    var nickname: String!
+    var userNames: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +65,7 @@ class GameViewController: UIViewController {
     func showAlert() {
         let title = game.determineTitle()
         let message = game.generateMessage()
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "OK", style: .default,
                                    handler: { action in
                                     self.newGame()
