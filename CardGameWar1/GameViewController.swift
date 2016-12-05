@@ -11,7 +11,6 @@ import UIKit
 class GameViewController: UIViewController {
     
     let game = Game()
-    let war = War()
     var nickname: String!
 
     override func viewDidLoad() {

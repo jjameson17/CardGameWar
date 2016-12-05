@@ -56,36 +56,24 @@ class SocketIOManager: NSObject {
         completionHandler()
     }
     
-    func getChatMessage(completionHandler: @escaping (_ messageInfo: [String: AnyObject]) -> Void) {
-        socket.on("newChatMessage") { (dataArray, socketAck) -> Void in
-            var messageDictionary = [String: AnyObject]()
-            messageDictionary["nickname"] = dataArray[0] as! String as AnyObject?
-            messageDictionary["message"] = dataArray[1] as! String as AnyObject?
-            messageDictionary["date"] = dataArray[2] as! String as AnyObject?
-            
-            completionHandler(messageDictionary)
-        }
-    }
-    
     func makeBattleMove() {
         socket.emit("made battle move")
-        //print("bbb")
-        //self.playerTurn += 1
     }
 
     func makeWarMove() {
         socket.emit("made war move")
     }
     
-    func startGame(completionHandler: @escaping (_ hand:  [[String: AnyObject]]?) -> Void) {
+    func startGame(completionHandler: @escaping (_ hand: Array<Any>) -> Void) {
         socket.emit("startedGame")
         
-        socket.on("startedGame") { (hand, ack) -> Void in
-            completionHandler(hand[0] as? [[String: AnyObject]])
+        socket.on("startedGame") { (hands, ack) -> Void in
+            completionHandler((hands as Array<Any>))
         }
         
-        socket.on("join game") { (hand, ack) -> Void in
-            completionHandler(hand[0] as? [[String: AnyObject]])
+        socket.on("join game") { (hands, ack) -> Void in
+            print("joined: ", hands)
+            completionHandler((hands as Array<Any>))
         }
     }
     

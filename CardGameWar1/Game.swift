@@ -9,6 +9,7 @@
 
 import Foundation
 
+typealias JSONDictionary = [String: AnyObject]
 
 class Game {
     var cardStackCount: Int = 0 //number of cards in stack during a tie
@@ -29,14 +30,11 @@ class Game {
     
     
     init() {
-        let api = APIParser()
-        let newdeck = api.newDeck()
-        self.deckID = String(describing: newdeck!["deck_id"]!) //initialize a shuffled deck
-        if let input = self.deckID {
-            let p1Deal = api.deal(deckID: input)
-            self.p1Cards = p1Deal!["cards"] as! [JSONDictionary] //deal cards for player 1
-            let p2Deal = api.deal(deckID: input)
-            self.p2Cards = p2Deal!["cards"] as! [JSONDictionary] //deal cards for player 2
+        SocketIOManager.sharedInstance.startGame() { (socketHands) -> Void in
+            let hands = (socketHands[0] as AnyObject)
+            
+            self.p1Cards = hands[0] as! [JSONDictionary]
+            self.p2Cards = hands[1] as! [JSONDictionary]
         }
     }
     
