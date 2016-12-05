@@ -64,7 +64,11 @@ class CardGameWar1Tests: XCTestCase {
         testGame.battle()
         XCTAssertNotEqual(testGame.p1Cards.count, 26)
         XCTAssertNotEqual(testGame.p2Cards.count, 26)
-        //XCTAssertEqual(
+        XCTAssertEqual(testGame.roundCount, 1)
+        XCTAssertEqual(testGame.p1CardDraw, 0)
+        XCTAssertEqual(testGame.p2CardDraw, 0)
+        
+        
         
     }
     
