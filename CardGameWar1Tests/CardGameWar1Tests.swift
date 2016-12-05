@@ -11,26 +11,61 @@ import XCTest
 
 class CardGameWar1Tests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    let testGame = Game()
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testConvertCardValue() {
+        XCTAssertEqual(testGame.convertCardValue(rawCard: "KING"), 13)
+        XCTAssertEqual(testGame.convertCardValue(rawCard: "QUEEN"), 12)
+        XCTAssertEqual(testGame.convertCardValue(rawCard: "ACE"), 1)
+        XCTAssertEqual(testGame.convertCardValue(rawCard: "6"), 6)
+        XCTAssertEqual(testGame.convertCardValue(rawCard: "0"), 0)
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDidLoseRounds() {
+        testGame.roundCount += 1 // roundCount = 1
+        testGame.didLoseRounds()
+        XCTAssertFalse(testGame.draw)
+        testGame.roundCount += 48 //roundCount = 49
+        testGame.didLoseRounds()
+        XCTAssertFalse(testGame.draw)
+        testGame.roundCount += 1 //roundCount = 50
+        testGame.didLoseRounds()
+        XCTAssertTrue(testGame.draw)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDidLoseP1() {
+        testGame.didLose()
+        XCTAssertFalse(testGame.p1Win)
+        XCTAssertFalse(testGame.p2Win)
+        testGame.p1Cards.removeAll()
+        testGame.didLose()
+        XCTAssertTrue(testGame.p2Win)
+    }
+    func testDidLoseP2() {
+        testGame.p2Cards.removeAll()
+        testGame.didLose()
+        XCTAssertTrue(testGame.p1Win)
+    }
+    func testDetermineTitle() {
+        XCTAssertEqual(testGame.determineTitle(), "Draw")
+        testGame.p1Win = true
+        XCTAssertEqual(testGame.determineTitle(), "Player 1 Wins!")
+        testGame.p1Win = false
+        testGame.p2Win = true
+        XCTAssertEqual(testGame.determineTitle(), "Player 2 Wins!")
+    }
+    func testGenerateMessage() {
+        XCTAssertEqual(testGame.generateMessage(), "Draw: 26 - 26")
+        testGame.p1Win = true
+        XCTAssertEqual(testGame.generateMessage(), "Player 1 wins: 26 - 26")
+        testGame.p1Win = false
+        testGame.p2Win = true
+        XCTAssertEqual(testGame.generateMessage(), "Player 2 wins: 26 - 26")
+    }
+    func testBattle() {
+        testGame.battle()
+        XCTAssertNotEqual(testGame.p1Cards.count, 26)
+        XCTAssertNotEqual(testGame.p2Cards.count, 26)
+        //XCTAssertEqual(
+        
     }
     
 }
