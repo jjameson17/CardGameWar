@@ -9,6 +9,7 @@
 
 import Foundation
 
+typealias JSONDictionary = [String: AnyObject]
 
 class Game {
     var cardStackCount: Int = 0 //number of cards in stack during a tie
