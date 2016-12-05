@@ -28,7 +28,6 @@ class Game {
     var deckID: String?
     var localPlayerMove: Int = 0
     
-    
     init() {
         SocketIOManager.sharedInstance.startGame() { (socketHands) -> Void in
             let hands = (socketHands[0] as AnyObject)
@@ -37,7 +36,6 @@ class Game {
             self.p2Cards = hands[1] as! [JSONDictionary]
         }
     }
-    
     
     func battle() {
         self.localPlayerMove += 1
