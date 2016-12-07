@@ -10,7 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    let game = Game()
+    var game = Game()
     var userNames: [String]!
 
     override func viewDidLoad() {
@@ -141,7 +141,10 @@ class GameViewController: UIViewController {
         }
     }
     
-    func newGame() {  }
+    func newGame() {
+        // reset game
+        self.game = Game()
+    }
     
 }
 

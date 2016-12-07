@@ -13,7 +13,6 @@ import SocketIO
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
     var inProgress = false
-    var battlePressed: Bool = false
     var playerTurn: Int = 0
     
     override init() {
@@ -94,7 +93,9 @@ class SocketIOManager: NSObject {
         }
         
         // someone left the game
-        socket.on("userList") { (ack) -> Void in
+        socket.on("end games") { (ack) -> Void in
+            self.playerTurn = 0
+            self.inProgress = false
             completionHandler("end game")
         }
     }
