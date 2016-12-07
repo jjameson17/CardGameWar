@@ -101,13 +101,13 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 SocketIOManager.sharedInstance.connectToServerWithNickname(nickname: textfield.text!, completionHandler: { (userList) -> Void in
                     DispatchQueue.main.async(execute: { () -> Void in
-                        if userList != nil {
+                        if userList != nil && (userList?.count)! > 0{
                             self.users = userList!
                             self.tblUserList.reloadData()
                             self.tblUserList.isHidden = false
                             self.updateButton()
                         } else if userList?.count == 0 {
-                            
+                            self.updateButton()
                         } else {
                             self.askForNickname(message: "Only 2 players can play at once")
                         }
