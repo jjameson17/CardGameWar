@@ -13,6 +13,11 @@ class CardGameWar1Tests: XCTestCase {
     
     let testGame = Game()
     
+    func testInitialSetup() {
+        XCTAssertEqual(testGame.p1Cards.count, 26)
+        XCTAssertEqual(testGame.p2Cards.count, 26)
+    }
+    
     func testConvertCardValue() {
         XCTAssertEqual(testGame.convertCardValue(rawCard: "KING"), 13)
         XCTAssertEqual(testGame.convertCardValue(rawCard: "QUEEN"), 12)
@@ -67,9 +72,16 @@ class CardGameWar1Tests: XCTestCase {
         XCTAssertEqual(testGame.roundCount, 1)
         XCTAssertEqual(testGame.p1CardDraw, 0)
         XCTAssertEqual(testGame.p2CardDraw, 0)
-        
-        
-        
+        XCTAssertGreaterThan(testGame.p1Cards.count, 0)
+        XCTAssertGreaterThan(testGame.p2Cards.count, 0)
+        XCTAssertNotNil(testGame.p1CardImage)
+        XCTAssertNotNil(testGame.p2CardImage)
+        XCTAssertTrue(testGame.p1Cards.count >= 25 && testGame.p1Cards.count <= 27)
+        XCTAssertTrue(testGame.p2Cards.count >= 25 && testGame.p2Cards.count <= 27)
+        XCTAssertFalse(testGame.p1Win)
+        XCTAssertFalse(testGame.p2Win)
+        XCTAssertFalse(testGame.draw)
+        XCTAssertEqual(testGame.localPlayerMove, 1)
     }
     
 }
