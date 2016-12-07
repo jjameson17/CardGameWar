@@ -52,9 +52,7 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "idSegueExitGame" {
-                let usersViewController = segue.destination as! UsersViewController
                 SocketIOManager.sharedInstance.endGame()
-                //gameViewController.userNames = users.flatMap { String(describing: $0["nickname"]!) }
             }
         }
         
@@ -113,6 +111,10 @@ class GameViewController: UIViewController {
         SocketIOManager.sharedInstance.listenForMoves { (typeOfMove: String) -> Void in
             print(typeOfMove)
             self.updateLabels()
+            
+            if(typeOfMove == "end game") {
+                self.performSegue(withIdentifier: "idSegueExitGame", sender: nil)
+            }
         }
     }
     
