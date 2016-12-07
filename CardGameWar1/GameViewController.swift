@@ -97,7 +97,11 @@ class GameViewController: UIViewController {
         roundCountLabel.text = String(game.roundCount)
         if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
             //print("enabled")
-            warButtonPress.isEnabled = true
+            if game.isWar {
+                warButtonPress.isEnabled = false
+            } else {
+                warButtonPress.isEnabled = true
+            }
         } else {
             //print("disabled")
             warButtonPress.isEnabled = false
