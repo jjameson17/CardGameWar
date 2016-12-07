@@ -48,6 +48,17 @@ class GameViewController: UIViewController {
     @IBOutlet weak var roundCountLabel: UILabel!
     @IBOutlet weak var scoreboardPlayer1Label: UILabel!
     @IBOutlet weak var scoreboardPlayer2Label: UILabel!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "idSegueExitGame" {
+                let usersViewController = segue.destination as! UsersViewController
+                SocketIOManager.sharedInstance.endGame()
+                //gameViewController.userNames = users.flatMap { String(describing: $0["nickname"]!) }
+            }
+        }
+        
+    }
 
     
     func loadImageFromUrl(url: String, view: UIImageView){

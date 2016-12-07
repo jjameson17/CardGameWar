@@ -50,7 +50,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             startGameButton.isEnabled = true
         }
         
-        if SocketIOManager.inProgress {
+        if SocketIOManager.sharedInstance.inProgress {
             startGameButton.setTitle("Join Current Game", for: .normal)
         } else {
             startGameButton.setTitle("Start New Game", for: .normal)

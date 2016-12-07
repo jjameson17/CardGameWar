@@ -164,6 +164,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCO-Uo-cFD">
+                                <rect key="frame" x="56" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <segue destination="6Z9-lj-ZOb" kind="show" identifier="idSegueExitGame" id="bpA-T8-jqq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50374597311019897" green="0.10509110242128372" blue="0.085441507399082184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.18365316840000001" green="0.67770415289999997" blue="0.80069944370000001" alpha="1" colorSpace="calibratedRGB"/>

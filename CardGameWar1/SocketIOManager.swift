@@ -12,7 +12,7 @@ import SocketIO
 
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
-    static var inProgress = false
+    var inProgress = false
     var battlePressed: Bool = false
     var playerTurn: Int = 0
     
@@ -45,7 +45,7 @@ class SocketIOManager: NSObject {
         
         // someone else started the game
         socket.on("startedGame") { (dataArray, ack) -> Void in
-            SocketIOManager.inProgress = true
+            self.inProgress = true
             let empty = [[String: AnyObject]]()
             completionHandler(empty)
         }
@@ -62,6 +62,11 @@ class SocketIOManager: NSObject {
 
     func makeWarMove() {
         socket.emit("made war move")
+    }
+    func endGame() {
+        closeConnection()
+        establishConnection()
+        self.inProgress = false
     }
     
     func startGame(completionHandler: @escaping (_ hand: Array<Any>) -> Void) {
