@@ -92,5 +92,10 @@ class SocketIOManager: NSObject {
         socket.on("made war move") { (ack) -> Void in
             completionHandler("war")
         }
+        
+        // someone left the game
+        socket.on("userList") { (ack) -> Void in
+            completionHandler("end game")
+        }
     }
 }
