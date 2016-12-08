@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSS-58-Ff3">
-                                <rect key="frame" x="0.0" y="119.5" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player 1 Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGo-Rh-n2i">
                                         <rect key="frame" x="8" y="14" width="108" height="21"/>
@@ -109,28 +109,24 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NGo-Rh-n2i" secondAttribute="trailing" constant="259" id="0Iz-p6-2eG"/>
-                                    <constraint firstItem="tPA-d1-H6b" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="233" id="72Y-Zz-InQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="tPA-d1-H6b" secondAttribute="trailing" constant="120" id="6b2-aH-Gim"/>
                                     <constraint firstItem="hKV-tD-lmD" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="8kZ-pu-hki"/>
-                                    <constraint firstItem="F3I-dG-UwL" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="122" id="9r9-bb-q6y"/>
                                     <constraint firstItem="NGo-Rh-n2i" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="Ckl-nB-Bis"/>
                                     <constraint firstAttribute="height" constant="48" id="ENH-B6-ciJ"/>
                                     <constraint firstItem="NGo-Rh-n2i" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="8" id="FLJ-l4-oU1"/>
                                     <constraint firstItem="TiD-6j-oUK" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="GMS-bz-gO5"/>
-                                    <constraint firstItem="TiD-6j-oUK" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="150" id="Q2Z-Ch-rph"/>
-                                    <constraint firstAttribute="trailing" secondItem="tPA-d1-H6b" secondAttribute="trailing" constant="120" id="UBc-CM-40D"/>
+                                    <constraint firstAttribute="trailing" secondItem="hKV-tD-lmD" secondAttribute="trailing" constant="157" id="QB4-7d-x8V"/>
+                                    <constraint firstAttribute="trailing" secondItem="F3I-dG-UwL" secondAttribute="trailing" constant="233" id="ZE5-Xa-dhn"/>
                                     <constraint firstItem="Ai9-Bw-p1V" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="258" id="afg-K0-l4p"/>
                                     <constraint firstItem="F3I-dG-UwL" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="hpH-YB-GbT"/>
                                     <constraint firstItem="tPA-d1-H6b" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="oed-3r-p93"/>
-                                    <constraint firstAttribute="trailing" secondItem="hKV-tD-lmD" secondAttribute="trailing" constant="157" id="pSY-aJ-MES"/>
                                     <constraint firstAttribute="trailing" secondItem="TiD-6j-oUK" secondAttribute="trailing" constant="181" id="pfh-k2-2ei"/>
                                     <constraint firstItem="Ai9-Bw-p1V" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="sog-C7-zeK"/>
-                                    <constraint firstItem="hKV-tD-lmD" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="191" id="uZa-df-QfQ"/>
                                     <constraint firstAttribute="trailing" secondItem="Ai9-Bw-p1V" secondAttribute="trailing" constant="8" id="v6X-jW-xIp"/>
-                                    <constraint firstAttribute="trailing" secondItem="F3I-dG-UwL" secondAttribute="trailing" constant="233" id="vYK-lh-yLb"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-Nz-8kt">
-                                <rect key="frame" x="48" y="499.5" width="125" height="37"/>
+                                <rect key="frame" x="48" y="500" width="125" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="IpI-fe-PTr"/>
                                     <constraint firstAttribute="width" constant="125" id="TuJ-HT-K0e"/>
@@ -148,28 +144,28 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="SRY-kI-pJ8">
-                                <rect key="frame" x="139" y="363.5" width="97" height="128"/>
+                                <rect key="frame" x="139" y="364" width="97" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="iMr-Qh-J5L"/>
                                     <constraint firstAttribute="height" constant="128" id="yzN-oC-l9i"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="CBV-wL-Zdz">
-                                <rect key="frame" x="139" y="175.5" width="98" height="128"/>
+                                <rect key="frame" x="139" y="176" width="98" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Tsj-Im-wWu"/>
                                     <constraint firstAttribute="width" constant="98" id="yku-Td-YAq"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logomakr_1BBp2G" translatesAutoresizingMaskIntoConstraints="NO" id="2Ri-QD-wWh">
-                                <rect key="frame" x="129" y="313.5" width="118" height="40"/>
+                                <rect key="frame" x="129" y="314" width="118" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="EPf-1D-KC1"/>
                                     <constraint firstAttribute="height" constant="54" id="aSf-LD-Tjh"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-We-NLL">
-                                <rect key="frame" x="203" y="499.5" width="125" height="37"/>
+                                <rect key="frame" x="203" y="500" width="125" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="QrW-rc-t8j"/>
                                     <constraint firstAttribute="height" constant="37" id="aAh-hB-FOo"/>
