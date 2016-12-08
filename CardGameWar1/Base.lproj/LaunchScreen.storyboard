@@ -21,26 +21,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="coollogo_com-84021040" translatesAutoresizingMaskIntoConstraints="NO" id="ryW-DJ-YG9">
-                                <rect key="frame" x="112" y="297" width="150" height="72"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="free-vector-red-poker-background" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-oO-KZD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jimmy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ9-fS-yY9">
-                                <rect key="frame" x="212" y="367" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.026277647000000001" blue="0.063308607550000007" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sivan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwU-Xm-R0h">
-                                <rect key="frame" x="118" y="367" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.026277647000000001" blue="0.063308607550000007" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logomakr_1BBp2G" translatesAutoresizingMaskIntoConstraints="NO" id="ryW-DJ-YG9">
+                                <rect key="frame" x="112" y="297" width="150" height="72"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ryW-DJ-YG9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jpp-ib-CWQ"/>
+                            <constraint firstItem="ryW-DJ-YG9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VMk-0q-c2O"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,6 +42,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="coollogo_com-84021040" width="154" height="81"/>
+        <image name="Logomakr_1BBp2G" width="749" height="115"/>
+        <image name="free-vector-red-poker-background" width="700" height="490"/>
     </resources>
 </document>
