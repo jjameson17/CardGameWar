@@ -66,45 +66,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-Nz-8kt">
-                                <rect key="frame" x="48" y="514" width="125" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSS-58-Ff3">
+                                <rect key="frame" x="0.0" y="119.5" width="375" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player 1 Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGo-Rh-n2i">
+                                        <rect key="frame" x="8" y="14" width="108" height="21"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
+                                        <color key="textColor" red="0.0051536243408918381" green="1" blue="0.84632676839828491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player 2 Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai9-Bw-p1V">
+                                        <rect key="frame" x="258" y="14" width="109" height="21"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
+                                        <color key="textColor" red="0.0051536243408918381" green="1" blue="0.84632676839828491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rounds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiD-6j-oUK">
+                                        <rect key="frame" x="150" y="14" width="44" height="17"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="11"/>
+                                        <color key="textColor" red="0.0051536243408918381" green="1" blue="0.84632676839828491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3I-dG-UwL">
+                                        <rect key="frame" x="122" y="14" width="20" height="21"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-tD-lmD">
+                                        <rect key="frame" x="191" y="14" width="27" height="16"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                        <color key="textColor" red="0.0051536243408918381" green="1" blue="0.84632676839828491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-d1-H6b">
+                                        <rect key="frame" x="233" y="13" width="22" height="21"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NGo-Rh-n2i" secondAttribute="trailing" constant="259" id="0Iz-p6-2eG"/>
+                                    <constraint firstItem="tPA-d1-H6b" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="233" id="72Y-Zz-InQ"/>
+                                    <constraint firstItem="hKV-tD-lmD" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="8kZ-pu-hki"/>
+                                    <constraint firstItem="F3I-dG-UwL" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="122" id="9r9-bb-q6y"/>
+                                    <constraint firstItem="NGo-Rh-n2i" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="Ckl-nB-Bis"/>
+                                    <constraint firstAttribute="height" constant="48" id="ENH-B6-ciJ"/>
+                                    <constraint firstItem="NGo-Rh-n2i" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="8" id="FLJ-l4-oU1"/>
+                                    <constraint firstItem="TiD-6j-oUK" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="GMS-bz-gO5"/>
+                                    <constraint firstItem="TiD-6j-oUK" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="150" id="Q2Z-Ch-rph"/>
+                                    <constraint firstAttribute="trailing" secondItem="tPA-d1-H6b" secondAttribute="trailing" constant="120" id="UBc-CM-40D"/>
+                                    <constraint firstItem="Ai9-Bw-p1V" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="258" id="afg-K0-l4p"/>
+                                    <constraint firstItem="F3I-dG-UwL" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="hpH-YB-GbT"/>
+                                    <constraint firstItem="tPA-d1-H6b" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="oed-3r-p93"/>
+                                    <constraint firstAttribute="trailing" secondItem="hKV-tD-lmD" secondAttribute="trailing" constant="157" id="pSY-aJ-MES"/>
+                                    <constraint firstAttribute="trailing" secondItem="TiD-6j-oUK" secondAttribute="trailing" constant="181" id="pfh-k2-2ei"/>
+                                    <constraint firstItem="Ai9-Bw-p1V" firstAttribute="centerY" secondItem="XSS-58-Ff3" secondAttribute="centerY" id="sog-C7-zeK"/>
+                                    <constraint firstItem="hKV-tD-lmD" firstAttribute="leading" secondItem="XSS-58-Ff3" secondAttribute="leading" constant="191" id="uZa-df-QfQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ai9-Bw-p1V" secondAttribute="trailing" constant="8" id="v6X-jW-xIp"/>
+                                    <constraint firstAttribute="trailing" secondItem="F3I-dG-UwL" secondAttribute="trailing" constant="233" id="vYK-lh-yLb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UW-Nz-8kt">
+                                <rect key="frame" x="48" y="499.5" width="125" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="IpI-fe-PTr"/>
+                                    <constraint firstAttribute="width" constant="125" id="TuJ-HT-K0e"/>
+                                </constraints>
                                 <state key="normal" image="button_battle (1)"/>
                                 <connections>
                                     <action selector="warButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qfI-vm-JG6"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kf-zL-oMn">
-                                <rect key="frame" x="8" y="243" width="98" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSE-k8-luc">
+                                <rect key="frame" x="249" y="269" width="97" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="ZPz-wA-U3B"/>
+                                    <constraint firstAttribute="height" constant="128" id="dFb-Xy-6Bx"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSE-k8-luc">
-                                <rect key="frame" x="264" y="243" width="95" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="SRY-kI-pJ8">
+                                <rect key="frame" x="139" y="363.5" width="97" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="iMr-Qh-J5L"/>
+                                    <constraint firstAttribute="height" constant="128" id="yzN-oC-l9i"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Scoreboard" translatesAutoresizingMaskIntoConstraints="NO" id="GLM-N4-cd0">
-                                <rect key="frame" x="8" y="28" width="360" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="CBV-wL-Zdz">
+                                <rect key="frame" x="139" y="175.5" width="98" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Tsj-Im-wWu"/>
+                                    <constraint firstAttribute="width" constant="98" id="yku-Td-YAq"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-d1-H6b">
-                                <rect key="frame" x="157" y="53" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3I-dG-UwL">
-                                <rect key="frame" x="124" y="53" width="95" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="SRY-kI-pJ8">
-                                <rect key="frame" x="138" y="364" width="99" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logomakr_1BBp2G" translatesAutoresizingMaskIntoConstraints="NO" id="2Ri-QD-wWh">
+                                <rect key="frame" x="129" y="313.5" width="118" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="EPf-1D-KC1"/>
+                                    <constraint firstAttribute="height" constant="54" id="aSf-LD-Tjh"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-We-NLL">
-                                <rect key="frame" x="203" y="514" width="125" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-We-NLL">
+                                <rect key="frame" x="203" y="499.5" width="125" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="QrW-rc-t8j"/>
+                                    <constraint firstAttribute="height" constant="37" id="aAh-hB-FOo"/>
+                                </constraints>
                                 <state key="normal" image="button_war"/>
                                 <state key="disabled">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,62 +182,46 @@
                                     <action selector="warTieButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BXD-ZU-xNB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rounds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiD-6j-oUK">
-                                <rect key="frame" x="157" y="32" width="49" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="11"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_of_card" translatesAutoresizingMaskIntoConstraints="NO" id="CBV-wL-Zdz">
-                                <rect key="frame" x="138" y="112" width="99" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kf-zL-oMn">
+                                <rect key="frame" x="29" y="269" width="97" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="LXx-wb-Za5"/>
+                                    <constraint firstAttribute="width" constant="90" id="ocH-Pv-tA7"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-tD-lmD">
-                                <rect key="frame" x="195" y="30" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1 Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGo-Rh-n2i">
-                                <rect key="frame" x="48" y="53" width="108" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 2 Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai9-Bw-p1V">
-                                <rect key="frame" x="227" y="53" width="109" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCO-Uo-cFD">
-                                <rect key="frame" x="48" y="7" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCO-Uo-cFD">
+                                <rect key="frame" x="38" y="170" width="58" height="30"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
                                     <segue destination="6Z9-lj-ZOb" kind="show" identifier="idSegueExitGame" id="bpA-T8-jqq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gamemode: War" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWH-dp-aYQ">
-                                <rect key="frame" x="130" y="83" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logomakr_1BBp2G" translatesAutoresizingMaskIntoConstraints="NO" id="2Ri-QD-wWh">
-                                <rect key="frame" x="129" y="280" width="118" height="54"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.50374597311019897" green="0.10509110242128372" blue="0.085441507399082184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.18365316840000001" green="0.67770415289999997" blue="0.80069944370000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2Ri-QD-wWh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1a1-Z1-fay"/>
+                            <constraint firstItem="CBV-wL-Zdz" firstAttribute="leading" secondItem="LCO-Uo-cFD" secondAttribute="trailing" constant="43" id="8ER-lw-aEv"/>
+                            <constraint firstItem="SRY-kI-pJ8" firstAttribute="top" secondItem="CBV-wL-Zdz" secondAttribute="bottom" constant="60" id="8XJ-eM-6W9"/>
+                            <constraint firstItem="LCO-Uo-cFD" firstAttribute="top" secondItem="XSS-58-Ff3" secondAttribute="bottom" constant="2.5" id="9sO-d4-GmJ"/>
+                            <constraint firstItem="Kib-We-NLL" firstAttribute="leading" secondItem="3UW-Nz-8kt" secondAttribute="trailing" constant="30" id="CFV-m8-lcr"/>
+                            <constraint firstItem="CBV-wL-Zdz" firstAttribute="top" secondItem="XSS-58-Ff3" secondAttribute="bottom" constant="8" id="EOy-Jt-Kef"/>
+                            <constraint firstItem="2kf-zL-oMn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FtH-86-mnR"/>
+                            <constraint firstItem="SRY-kI-pJ8" firstAttribute="leading" secondItem="3UW-Nz-8kt" secondAttribute="trailing" constant="-34" id="SVm-ME-DmZ"/>
+                            <constraint firstItem="sSE-k8-luc" firstAttribute="leading" secondItem="2Ri-QD-wWh" secondAttribute="trailing" constant="2" id="WCi-ct-dTJ"/>
+                            <constraint firstItem="3UW-Nz-8kt" firstAttribute="top" secondItem="SRY-kI-pJ8" secondAttribute="bottom" constant="8" id="WQJ-ty-buW"/>
+                            <constraint firstItem="sSE-k8-luc" firstAttribute="leading" secondItem="2kf-zL-oMn" secondAttribute="trailing" constant="123" id="YuL-aB-5dT"/>
+                            <constraint firstItem="SRY-kI-pJ8" firstAttribute="top" secondItem="2Ri-QD-wWh" secondAttribute="bottom" constant="10" id="Zom-Z5-fbX"/>
+                            <constraint firstItem="CBV-wL-Zdz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c0A-Zr-kg0"/>
+                            <constraint firstItem="SRY-kI-pJ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cyb-ta-C64"/>
+                            <constraint firstItem="sSE-k8-luc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eXq-N9-YkD"/>
+                            <constraint firstItem="2Ri-QD-wWh" firstAttribute="top" secondItem="CBV-wL-Zdz" secondAttribute="bottom" constant="10" id="fF5-Qm-Ki8"/>
                             <constraint firstItem="2Ri-QD-wWh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sKy-Xl-JUP"/>
+                            <constraint firstItem="Kib-We-NLL" firstAttribute="top" secondItem="SRY-kI-pJ8" secondAttribute="bottom" constant="8" id="teE-c9-yIs"/>
+                            <constraint firstItem="2Ri-QD-wWh" firstAttribute="leading" secondItem="2kf-zL-oMn" secondAttribute="trailing" constant="2.5" id="tln-q6-P06"/>
+                            <constraint firstItem="Kib-We-NLL" firstAttribute="leading" secondItem="SRY-kI-pJ8" secondAttribute="trailing" constant="-33" id="ujc-4P-llV"/>
+                            <constraint firstAttribute="trailing" secondItem="XSS-58-Ff3" secondAttribute="trailing" id="vsL-SH-IsY"/>
+                            <constraint firstItem="XSS-58-Ff3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ycu-Li-r1a"/>
                         </constraints>
                     </view>
                     <connections>
@@ -185,12 +238,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="39"/>
+            <point key="canvasLocation" x="76" y="38.23088455772114"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logomakr_1BBp2G" width="749" height="115"/>
-        <image name="Scoreboard" width="864" height="106"/>
         <image name="back_of_card" width="236" height="331"/>
         <image name="button_battle (1)" width="150" height="40"/>
         <image name="button_war" width="150" height="40"/>
