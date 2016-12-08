@@ -21,21 +21,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eI-M5-zvc">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eI-M5-zvc">
                                 <rect key="frame" x="99" y="20" width="176" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Game"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="0.0" green="0.14236017100000001" blue="0.80069944370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="idSegueStartGame" id="ypy-Pz-i92"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mkf-5u-uoC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mkf-5u-uoC">
                                 <rect key="frame" x="0.0" y="66" width="375" height="601"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZNU-I7-X0i" firstAttribute="top" secondItem="Mkf-5u-uoC" secondAttribute="bottom" id="Ebb-Wh-AZf"/>
+                            <constraint firstItem="7eI-M5-zvc" firstAttribute="top" secondItem="H7y-Cq-8q7" secondAttribute="bottom" id="UcW-Tw-foB"/>
+                            <constraint firstAttribute="trailing" secondItem="Mkf-5u-uoC" secondAttribute="trailing" id="WpM-7p-ap0"/>
+                            <constraint firstItem="Mkf-5u-uoC" firstAttribute="top" secondItem="7eI-M5-zvc" secondAttribute="bottom" constant="16" id="hdR-ka-YbT"/>
+                            <constraint firstItem="Mkf-5u-uoC" firstAttribute="leading" secondItem="Auj-Aa-x3B" secondAttribute="leading" id="qHy-ig-e6k"/>
+                            <constraint firstItem="7eI-M5-zvc" firstAttribute="centerX" secondItem="Auj-Aa-x3B" secondAttribute="centerX" id="uYq-ke-NEL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="startGameButton" destination="7eI-M5-zvc" id="8v1-nl-VT7"/>
