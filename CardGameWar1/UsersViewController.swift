@@ -87,7 +87,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func askForNickname(message: String = "Please enter a nickname") {
-        let alertController = UIAlertController(title: "Welcome to War", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Welcome to CardConnect", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         alertController.addTextField(configurationHandler: nil)
         
