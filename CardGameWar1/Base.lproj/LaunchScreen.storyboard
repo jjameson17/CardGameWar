@@ -21,18 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="free-vector-red-poker-background" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-oO-KZD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free-vector-red-poker-background" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-oO-KZD">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logomakr_1BBp2G" translatesAutoresizingMaskIntoConstraints="NO" id="ryW-DJ-YG9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logomakr_1BBp2G" translatesAutoresizingMaskIntoConstraints="NO" id="ryW-DJ-YG9">
                                 <rect key="frame" x="112" y="297" width="150" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="2fv-sO-S1N"/>
+                                    <constraint firstAttribute="height" constant="72" id="vUG-Bw-CU0"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="f0A-oO-KZD" secondAttribute="bottom" id="7e7-U2-d1q"/>
                             <constraint firstItem="ryW-DJ-YG9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jpp-ib-CWQ"/>
+                            <constraint firstItem="f0A-oO-KZD" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="NaQ-BQ-f0b"/>
                             <constraint firstItem="ryW-DJ-YG9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VMk-0q-c2O"/>
+                            <constraint firstAttribute="trailing" secondItem="f0A-oO-KZD" secondAttribute="trailing" id="aa0-Dd-SF5"/>
+                            <constraint firstItem="f0A-oO-KZD" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qjL-hw-72M"/>
                         </constraints>
                     </view>
                 </viewController>
