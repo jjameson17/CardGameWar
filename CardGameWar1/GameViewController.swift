@@ -72,8 +72,8 @@ class GameViewController: UIViewController {
     }
     
     func showAlert() {
-        let title = game.determineTitle()
-        let message = game.generateMessage()
+        let title = game.determineTitle(player: scoreboardPlayer1Label.text!, player2: scoreboardPlayer2Label.text!)
+        let message = game.generateMessage(player: scoreboardPlayer1Label.text!, player2: scoreboardPlayer2Label.text!)
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default,
                                    handler: { action in

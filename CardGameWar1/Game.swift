@@ -125,25 +125,23 @@ class Game {
         }
     }
     
-    func determineTitle() -> String {
+    func determineTitle(player: String, player2: String) -> String {
         if self.p1Win == true {
-            return "Player 1 Wins!"
+            return "\(player) Wins!"
         } else if self.p2Win == true {
-            return "Player 2 Wins!"
+            return "\(player2) Wins!"
         } else {
             return "Draw"
         }
     }
     
-    func generateMessage() -> String {
+    func generateMessage(player: String, player2: String) -> String {
         if self.p1Win == true {
-            return "Player 1 wins: \(self.p1Cards.count) - \(self.p2Cards.count)"
+            return "\(player) wins: \(self.p1Cards.count) - \(self.p2Cards.count)"
         } else if self.p2Win == true {
-            return "Player 2 wins: \(self.p2Cards.count) - \(self.p1Cards.count)"
+            return "\(player2) wins: \(self.p2Cards.count) - \(self.p1Cards.count)"
         } else {
             return "Draw: \(self.p1Cards.count) - \(self.p2Cards.count)"
         }
     }
-
-
 }
