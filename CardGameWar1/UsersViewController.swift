@@ -1,10 +1,7 @@
-//
-//  UsersViewController.swift
-//  SocketChat
-//
-//  Created by Gabriel Theodoropoulos on 1/31/16.
-//  Copyright © 2016 AppCoda. All rights reserved.
-//
+
+//starter code source: www.appcoda.com/socket-io-chat-app/
+
+
 import UIKit
 
 class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -12,7 +9,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tblUserList: UITableView!
     @IBOutlet weak var startGameButton: UIButton!
     
-    var users = [[String: AnyObject]]()
+    var users = [[String: AnyObject]]() //list of users when they join game
     var nickname: String? = nil
     var configurationOK = false
     
@@ -33,17 +30,16 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if(nickname == nil) {
+        if(nickname == nil) { //players enter username upon opening app
             askForNickname()
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    func updateButton() {
+    func updateButton() { //updates button depending on if there is a player in the game
         if tblUserList.numberOfRows(inSection: 0) == 1 {
             startGameButton.isEnabled = false
         } else {
@@ -58,8 +54,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //send nickname to game
         if let identifier = segue.identifier {
             if identifier == "idSegueStartGame" {
                 let gameViewController = segue.destination as! GameViewController
@@ -86,7 +81,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         navigationItem.title = "War"
     }
     
-    func askForNickname(message: String = "Please enter a nickname") {
+    func askForNickname(message: String = "Please enter a nickname") { //alert when entering game
         let alertController = UIAlertController(title: "Welcome to CardConnect", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         alertController.addTextField(configurationHandler: nil)
@@ -108,7 +103,7 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             self.updateButton()
                         } else if userList?.count == 0 {
                             self.updateButton()
-                        } else {
+                        } else { //if a 3rd player attempts to enter game
                             self.askForNickname(message: "Only 2 players can play at once")
                         }
                     })

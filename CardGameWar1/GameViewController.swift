@@ -26,7 +26,9 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: IBOutlets and IBActions
+    
     @IBOutlet weak var P1CardTotal: UILabel!
     @IBOutlet weak var P2CardTotal: UILabel!
     @IBOutlet weak var P1CardImage: UIImageView!
@@ -49,7 +51,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreboardPlayer1Label: UILabel!
     @IBOutlet weak var scoreboardPlayer2Label: UILabel!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //if player exits game
         if let identifier = segue.identifier {
             if identifier == "idSegueExitGame" {
                 SocketIOManager.sharedInstance.endGame()
@@ -58,7 +62,7 @@ class GameViewController: UIViewController {
         
     }
 
-    
+    // MARK: Update View
     func loadImageFromUrl(url: String, view: UIImageView){
         let url = NSURL(string: url)!
         let task = URLSession.shared.dataTask(with: url as URL) { (responseData, responseUrl, error) -> Void in
@@ -86,30 +90,30 @@ class GameViewController: UIViewController {
     
 
     func updateLabels() {
-        P1CardTotal.text = String(game.p1Cards.count)
+        P1CardTotal.text = String(game.p1Cards.count) //load card count
         P2CardTotal.text = String(game.p2Cards.count)
-        loadImageFromUrl(url: game.p1CardImage, view: P1CardImage)
-        loadImageFromUrl(url: game.p2CardImage, view: P2CardImage)
-        scoreboardPlayer1Label.text = userNames[0]
-        scoreboardPlayer2Label.text = userNames[1]
-        roundCountLabel.text = String(game.roundCount)
+        loadImageFromUrl(url: game.p1CardImage, view: P1CardImage) //load player 1 card
+        loadImageFromUrl(url: game.p2CardImage, view: P2CardImage) //load player 2 card
+        scoreboardPlayer1Label.text = userNames[0] //load player 1 nickname
+        scoreboardPlayer2Label.text = userNames[1] //load player 2 nickname
+        roundCountLabel.text = String(game.roundCount) //load roundCount
         if SocketIOManager.sharedInstance.playerTurn >= (game.localPlayerMove * 2) {
-            //print("enabled")
-            if game.isWar {
+            if game.isWar { //check if player can move
                 warButtonPress.isEnabled = false
             } else {
                 warButtonPress.isEnabled = true
             }
         } else {
-            //print("disabled")
             warButtonPress.isEnabled = false
         }
         gameOver()
     }
     
-    func listenforOpponentMoves() {
+    
+    // MARK: Socket Connection
+    func listenforOpponentMoves() { //if either player makes a move
         SocketIOManager.sharedInstance.listenForMoves { (typeOfMove: String) -> Void in
-            print(typeOfMove)
+            //print(typeOfMove)
             self.updateLabels()
             
             if(typeOfMove == "end game") {
@@ -118,24 +122,21 @@ class GameViewController: UIViewController {
         }
     }
     
+    // MARK: Game Functionality
+    
     func gameOver() {
         if game.p1Win == true {
             showAlert()
-            //let game = Game()
-            //P1CardTotal.text = "Player 1 Wins"
             warButtonPress.isEnabled = false
             warTieButtonPress.isEnabled = false
         }
         if game.p2Win == true {
             showAlert()
-            //P2CardTotal.text = "Player 2 Wins"
             warButtonPress.isEnabled = false
             warTieButtonPress.isEnabled = false
         }
         if game.draw == true {
             showAlert()
-            //P1CardTotal.text = "Draw"
-            //P2CardTotal.text = "Draw"
             warButtonPress.isEnabled = false
             warTieButtonPress.isEnabled = false
         }

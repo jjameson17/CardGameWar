@@ -8,9 +8,6 @@
 
 import Foundation
 
-import Foundation
-
-//typealias JSONDictionary = [String: AnyObject]
 
 class APIParser {
     
@@ -24,8 +21,6 @@ class APIParser {
         do {
             data = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response) as NSData?
         } catch let error1 as NSError {
-            //
-            //error?.memory = error1
             data = nil
         }
         if let jsonData = data {
@@ -43,7 +38,6 @@ class APIParser {
     }
     
     func deal(deckID: String?) -> JSONDictionary? {
-        print(deckID)
         let url = NSURL(string: "https://deckofcardsapi.com/api/deck/\(deckID!)/draw/?count=26")
         let request = NSMutableURLRequest(url: url! as URL)
         request.httpMethod = "GET"
@@ -53,7 +47,6 @@ class APIParser {
         do {
             data = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response) as NSData?
         } catch let error1 as NSError {
-            //error?.memory = error1
             data = nil
         }
         if let jsonData = data {

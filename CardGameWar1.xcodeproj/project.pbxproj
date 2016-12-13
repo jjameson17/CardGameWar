@@ -101,6 +101,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		356D94801E006B9A0010C407 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				35FF87B21DE0EB3A0011C913 /* UsersViewController.swift */,
+				359F1D911DD10F6400C5D096 /* GameViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		356D94811E006BBF0010C407 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				359F1DBD1DD10FB200C5D096 /* Game.swift */,
+				35FF87BF1DE0EC9E0011C913 /* SocketIOManager.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		356D94821E006C1B0010C407 /* TestingModels */ = {
+			isa = PBXGroup;
+			children = (
+				356D947C1E0069940010C407 /* Parser.swift */,
+				356D947E1E006A910010C407 /* TestGame.swift */,
+			);
+			name = TestingModels;
+			sourceTree = "<group>";
+		};
 		359F1D831DD10F6400C5D096 = {
 			isa = PBXGroup;
 			children = (
@@ -127,18 +154,15 @@
 		359F1D8E1DD10F6400C5D096 /* CardGameWar1 */ = {
 			isa = PBXGroup;
 			children = (
-				359F1D8F1DD10F6400C5D096 /* AppDelegate.swift */,
-				35FF87B21DE0EB3A0011C913 /* UsersViewController.swift */,
-				359F1D911DD10F6400C5D096 /* GameViewController.swift */,
-				359F1D931DD10F6400C5D096 /* Main.storyboard */,
-				35FF87BF1DE0EC9E0011C913 /* SocketIOManager.swift */,
+				356D94801E006B9A0010C407 /* ViewControllers */,
+				356D94811E006BBF0010C407 /* Models */,
 				35FF87B41DE0EBD20011C913 /* Cells */,
+				356D94821E006C1B0010C407 /* TestingModels */,
+				359F1D8F1DD10F6400C5D096 /* AppDelegate.swift */,
+				359F1D9B1DD10F6400C5D096 /* Info.plist */,
+				359F1D931DD10F6400C5D096 /* Main.storyboard */,
 				359F1D961DD10F6400C5D096 /* Assets.xcassets */,
 				359F1D981DD10F6400C5D096 /* LaunchScreen.storyboard */,
-				359F1D9B1DD10F6400C5D096 /* Info.plist */,
-				359F1DBD1DD10FB200C5D096 /* Game.swift */,
-				356D947C1E0069940010C407 /* Parser.swift */,
-				356D947E1E006A910010C407 /* TestGame.swift */,
 			);
 			path = CardGameWar1;
 			sourceTree = "<group>";
