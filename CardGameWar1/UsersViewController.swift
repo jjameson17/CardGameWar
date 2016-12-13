@@ -63,19 +63,6 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    
-    // MARK: IBAction Methods
-    @IBAction func exitChat(sender: AnyObject) {
-        SocketIOManager.sharedInstance.exitChatWithNickname(nickname: nickname!) { () -> Void in
-            DispatchQueue.main.async(execute: { () -> Void in
-                self.nickname = nil
-                self.users.removeAll()
-                self.tblUserList.isHidden = true
-                self.askForNickname()
-            })
-        }
-    }
-    
     // MARK: Custom Methods
     func configureNavigationBar() {
         navigationItem.title = "War"

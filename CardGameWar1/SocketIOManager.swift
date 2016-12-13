@@ -19,8 +19,10 @@ class SocketIOManager: NSObject {
         super.init()
     }
     
-    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "https://cardgamewar.herokuapp.com")! as URL)
+    // MARK: Connection Management
     
+    var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "https://cardgamewar.herokuapp.com")! as URL)
+
     func establishConnection() {
         socket.connect()
     }
@@ -29,6 +31,13 @@ class SocketIOManager: NSObject {
         socket.disconnect()
     }
     
+    /**
+     Connect to server with a given name
+     
+     - parameters:
+        - nickname: nickname that user to chose to identify with, will display when user connects
+        - completionHandler: callback function to be called when the appropriate socket events are emitted by the server
+    */
     func connectToServerWithNickname(nickname: String, completionHandler: @escaping (_ userList: [[String: AnyObject]]?) -> Void) {
         socket.emit("connectUser", nickname)
         
@@ -50,10 +59,7 @@ class SocketIOManager: NSObject {
         }
     }
     
-    func exitChatWithNickname(nickname: String, completionHandler: () -> Void) {
-        socket.emit("disconnect")
-        completionHandler()
-    }
+    // MARK: Battle Functionality
     
     func makeBattleMove() {
         socket.emit("made battle move")
@@ -62,12 +68,21 @@ class SocketIOManager: NSObject {
     func makeWarMove() {
         socket.emit("made war move")
     }
+    
+    // MARK: Manage Game States
+    
     func endGame() {
         closeConnection()
         establishConnection()
         self.inProgress = false
     }
     
+    /**
+        Start game and listen for socket events with the given completionHandler
+     
+        - parameters:
+            - completionHandler: callback function that is called when socket events are emitted by the server
+     */
     func startGame(completionHandler: @escaping (_ hand: Array<Any>) -> Void) {
         socket.emit("startedGame")
         
@@ -81,6 +96,12 @@ class SocketIOManager: NSObject {
         }
     }
     
+    /**
+     Listen for socket events corresponding to battle, war, and ending a game
+     
+     - parameters:
+         - completionHandler: callback function that is called when socket events are emitted by the server
+     */
     func listenForMoves(completionHandler: @escaping (_ moveType: String) -> Void) {
         socket.on("made battle move") { (ack) -> Void in
             self.playerTurn += 1
